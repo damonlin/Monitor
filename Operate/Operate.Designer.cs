@@ -62,8 +62,7 @@
             this.InlineStatusCheckBox.Text = "LUL Offline";
             this.InlineStatusCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.InlineStatusCheckBox.UseVisualStyleBackColor = true;
-            this.InlineStatusCheckBox.Click += new System.EventHandler(this.InlineStatusCheckBox_Click);
-            this.InlineStatusCheckBox.CheckedChanged += new System.EventHandler(this.InlineStatusCheckBox_CheckedChanged);
+   
             // 
             // checkBox1
             // 
@@ -77,7 +76,7 @@
             this.checkBox1.Text = "Initialize";
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Click += new System.EventHandler(this.checkBox1_Click);
+
             // 
             // groupBox2
             // 
@@ -104,8 +103,7 @@
             this.StopRadioButton.TabStop = true;
             this.StopRadioButton.Text = "STOP";
             this.StopRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.StopRadioButton.UseVisualStyleBackColor = true;
-            this.StopRadioButton.Click += new System.EventHandler(this.ModeChangeRadioButton_Click);
+            this.StopRadioButton.UseVisualStyleBackColor = true;    
             // 
             // ManualRadioButton
             // 
@@ -119,7 +117,7 @@
             this.ManualRadioButton.Text = "Manual";
             this.ManualRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ManualRadioButton.UseVisualStyleBackColor = true;
-            this.ManualRadioButton.Click += new System.EventHandler(this.ModeChangeRadioButton_Click);
+       
             // 
             // AutoRadioButton
             // 
@@ -133,7 +131,7 @@
             this.AutoRadioButton.Text = "Auto";
             this.AutoRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.AutoRadioButton.UseVisualStyleBackColor = true;
-            this.AutoRadioButton.Click += new System.EventHandler(this.ModeChangeRadioButton_Click);
+            
             // 
             // Operate
             // 

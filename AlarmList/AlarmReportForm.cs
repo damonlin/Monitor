@@ -177,13 +177,7 @@ namespace AlarmList
 
             InsertAlarmToAlarmReportTable(alarmObject);
 
-            alarmTabControlEX.SelectedTab = currentAlarmTabPageEX;
-
-            if (alarmCode.StartsWith("E"))
-                CIM.CIM_Schedule.getSingleton().ReportAlarmQueue.Enqueue(alarmCode);
-            else
-                CIM.CIM_Schedule.getSingleton().ReportLightQueue.Enqueue(alarmCode);
-
+            alarmTabControlEX.SelectedTab = currentAlarmTabPageEX;            
 
             return 0;
         }
@@ -362,10 +356,7 @@ namespace AlarmList
                     alarmSkipButton.Visible = false;
                     alarmContinueButton.Visible = false;
                 }
-                if (alarmObject.AlarmCode.StartsWith("E"))
-                    CIM.CIM_Schedule.getSingleton().ResetAlarm();
-                else
-                    CIM.CIM_Schedule.getSingleton().ResetLight();
+                
             }
         }
         private void searchLogButton_CheckedChanged(object sender, EventArgs e)

@@ -86,16 +86,6 @@ namespace Monitor
             }                            
         }
 
-        private void dIOMonitorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //dIOMonitorToolStripMenuItem.Checked = !dIOMonitorToolStripMenuItem.Checked;
-
-            //if (dIOMonitorToolStripMenuItem.Checked == true)
-
-            //else
-            //   Common.IOMonitorForm.getSingleton(ref sender).Hide(); 
-        }
-
         private void baseTimer_Tick(object sender, EventArgs e)
         {
             if (singleton != null)

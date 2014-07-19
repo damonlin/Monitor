@@ -20,14 +20,7 @@ namespace Monitor
                 return;
             }
 
-            if (MessageBox.Show("Use English UI?", "Language Select", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-            }
-            else
-            {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-TW");
-            }
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-TW");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -195,10 +195,6 @@
       <Project>{C91DFB82-1A09-49CE-87A7-DD93DE58CE00}</Project>
       <Name>Recipe</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Scenario\Scenario.csproj">
-      <Project>{F5CBF2C4-8766-4D19-AECE-C4F0D2DB606F}</Project>
-      <Name>Scenario</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Button-Turn-On-icon.png" />
