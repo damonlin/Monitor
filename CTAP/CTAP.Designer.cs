@@ -202,7 +202,6 @@
             this.InspectRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
             this.InspectRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.InspectRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.InspectRadioButton.Image = global::Monitor.Properties.Resources.Zoom_icon;
             this.InspectRadioButton.Name = "InspectRadioButton";
             this.InspectRadioButton.TabStop = true;
             this.InspectRadioButton.UseVisualStyleBackColor = false;
@@ -225,7 +224,6 @@
             this.DatalogRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
             this.DatalogRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.DatalogRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.DatalogRadioButton.Image = global::Monitor.Properties.Resources.Clipboard_icon;
             this.DatalogRadioButton.Name = "DatalogRadioButton";
             this.DatalogRadioButton.TabStop = true;
             this.DatalogRadioButton.UseVisualStyleBackColor = false;
@@ -237,7 +235,6 @@
             this.CIMRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
             this.CIMRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.CIMRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.CIMRadioButton.Image = global::Monitor.Properties.Resources.Computer_Network_icon;
             this.CIMRadioButton.Name = "CIMRadioButton";
             this.CIMRadioButton.TabStop = true;
             this.CIMRadioButton.UseVisualStyleBackColor = false;
@@ -249,7 +246,6 @@
             this.MaintainRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
             this.MaintainRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.MaintainRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.MaintainRadioButton.Image = global::Monitor.Properties.Resources.Gear_icon;
             this.MaintainRadioButton.Name = "MaintainRadioButton";
             this.MaintainRadioButton.TabStop = true;
             this.MaintainRadioButton.UseVisualStyleBackColor = false;
@@ -261,7 +257,6 @@
             this.RecipeRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
             this.RecipeRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.RecipeRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.RecipeRadioButton.Image = global::Monitor.Properties.Resources.Text_Edit_icon;
             this.RecipeRadioButton.Name = "RecipeRadioButton";
             this.RecipeRadioButton.TabStop = true;
             this.RecipeRadioButton.UseVisualStyleBackColor = false;

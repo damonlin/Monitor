@@ -20,7 +20,7 @@ namespace Monitor
                 return;
             }
 
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-TW");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
