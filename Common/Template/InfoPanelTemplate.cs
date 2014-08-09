@@ -40,6 +40,10 @@ namespace Common.Template
 
         }
 
+        public void InitPanel()
+        {            
+        }
+
         private void InfoPanelTemplate_DragEnter(object sender, DragEventArgs e)
         {
             if (this.AllowDrop)

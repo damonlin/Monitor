@@ -49,21 +49,22 @@ namespace Monitor
         }
 
         private void InitControl()
-        {           
-            Common.Template.InfoPanelTemplate Operation = new Operate.Operate();
-            Common.Template.InfoPanelTemplate inspectPanel = new Inspect.InspectPanel();
-            Common.Template.InfoPanelTemplate recipePanel = new Recipe.RecipePanel();
-            Common.Template.InfoPanelTemplate cimPanel = new CIM.CimPanel();
-            Common.Template.InfoPanelTemplate datalogPanel = new DataLog.DataLogPanel();
-            Common.Template.InfoPanelTemplate maintainPanel = new Maintain.MaintainPanel();
-                       
-               
-            navigationHashtable.Add("Operation", Operation);
-            navigationHashtable.Add("Inspect", inspectPanel);
-            navigationHashtable.Add("CIM", cimPanel);
-            navigationHashtable.Add("Recipe", recipePanel);
-            navigationHashtable.Add("Datalog", datalogPanel);
-            navigationHashtable.Add("Maintain", maintainPanel);
+        {
+            Common.Template.InfoPanelTemplate automodePanel = new AutoMode.AutoModePanel();
+            Common.Template.InfoPanelTemplate ParaPanel = new Parameter.ParameterPanel();
+            Common.Template.InfoPanelTemplate instantchartPanel = new InstantChart.InstantChartPanel();
+            Common.Template.InfoPanelTemplate historychartPanel = new HistoryChart.HistoryChartPanel();
+            Common.Template.InfoPanelTemplate alramPanel = new Alarm.AlarmPanel();
+            Common.Template.InfoPanelTemplate printscreenPanel = new PrintScreen.PrintScreenPanel();
+
+            navigationHashtable.Clear();
+
+            navigationHashtable.Add("AutoMode", automodePanel);
+            navigationHashtable.Add("Parameter", ParaPanel);
+            navigationHashtable.Add("InstantChart", instantchartPanel);
+            navigationHashtable.Add("HistoryChart", historychartPanel);
+            navigationHashtable.Add("Alarm", alramPanel);
+            navigationHashtable.Add("PrintScreen", printscreenPanel);
 
             foreach (string de in navigationHashtable.Keys)
             {
@@ -73,9 +74,9 @@ namespace Monitor
                 navigationHashtable[de].Tag = "";
                 navigationHashtable[de].Visible = false;
 
-                if (navigationHashtable[de] is Common.Template.NavigationPanelTemplate)
+                if (navigationHashtable[de] is Common.Template.InfoPanelTemplate)
                 {
-                    ((Common.Template.NavigationPanelTemplate)navigationHashtable[de]).InitNavigationPanel();
+                    ((Common.Template.InfoPanelTemplate)navigationHashtable[de]).InitPanel();
                 }
 
                 viewPanel.Controls.Add(navigationHashtable[de]);
@@ -194,7 +195,9 @@ namespace Monitor
             else
             {
                 szLogInfo = ((Control)sender).Name + "   " + ((Control)sender).Text;
-            }            
+            }
+
+            navigationHashtable[szNavigationString].Enabled = true;
 
             //if (!Maintain.UserLoginForm.getSingleton().SuperUserLoginStatus)
             {
@@ -212,16 +215,16 @@ namespace Monitor
                 //if (Maintain.UserAccountPanelControl.getSingleton().accessFunctionTable.ContainsFunction(szFunctionName))
                 {
                     //bool bAuthority = Maintain.UserAccountPanelControl.getSingleton().accessFunctionTable.GetAccessAccountType(szFunctionName).ContainsKey(Maintain.UserLoginForm.getSingleton().NowUserAccount.AccountType.GetFirstAccountTypeName()) || Maintain.UserLoginForm.getSingleton().NowUserAccount.AccessFunction.ContainsFunction(szFunctionName);
-                    
-                    if (navigationHashtable[szNavigationString] is Common.Template.NavigationPanelTemplate)
-                    {
-                        ((Common.Template.NavigationPanelTemplate)navigationHashtable[szNavigationString]).NowGunction.Control.Enabled = true;
-                    }
-                    else
-                    {
-                        //navigationHashtable[szNavigationString].Enabled = bAuthority;
-                    }
 
+                    //if (navigationHashtable[szNavigationString] is Common.Template.InfoPanelTemplate)
+                    //{
+                    //    //((Common.Template.InfoPanelTemplate)navigationHashtable[szNavigationString]).NowGunction.Control.Enabled = true;
+                    //}
+                    //else
+                    //{
+                    //    //navigationHashtable[szNavigationString].Enabled = bAuthority;
+                    //}
+                   
                     //if (!bAuthority)
                     //{
                      //   MessageBox.Show("Please Check Your Authority");

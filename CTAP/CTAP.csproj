@@ -163,37 +163,37 @@
       <Project>{242B3D49-7157-454F-BDCD-D1E6F6932F54}</Project>
       <Name>AlarmList</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CIM\CIM.csproj">
+    <ProjectReference Include="..\CIM\HistoryChart.csproj">
       <Project>{AF7876BD-588D-43D6-9FFC-4999E4C88CB4}</Project>
-      <Name>CIM</Name>
+      <Name>HistoryChart</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{16C8E8F6-E87C-41A9-AFA0-2D155569212E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Datalog\Datalog.csproj">
+    <ProjectReference Include="..\Datalog\Alarm.csproj">
       <Project>{9BF7F3DC-0CE5-4758-9071-39746EECA29E}</Project>
-      <Name>Datalog</Name>
+      <Name>Alarm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Inspect\Inspect.csproj">
+    <ProjectReference Include="..\Inspect\Parameter.csproj">
       <Project>{4EF9DE44-9367-4F5C-8362-DA4D682D1A62}</Project>
-      <Name>Inspect</Name>
+      <Name>Parameter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Maintain\Maintain.csproj">
+    <ProjectReference Include="..\Maintain\PrintScreen.csproj">
       <Project>{A9DDCCF9-34C8-419A-8D54-6CD7E70557E7}</Project>
-      <Name>Maintain</Name>
+      <Name>PrintScreen</Name>
     </ProjectReference>
     <ProjectReference Include="..\Monitor\Monitor.csproj">
       <Project>{F96C95F1-DA95-4788-A283-2C573A29865F}</Project>
       <Name>Monitor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Operate\Operate.csproj">
+    <ProjectReference Include="..\Operate\AutoMode.csproj">
       <Project>{0CBC0980-D7D5-4F78-8F84-D510AF0E8E6F}</Project>
-      <Name>Operate</Name>
+      <Name>AutoMode</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Recipe\Recipe.csproj">
+    <ProjectReference Include="..\Recipe\InstantChart.csproj">
       <Project>{C91DFB82-1A09-49CE-87A7-DD93DE58CE00}</Project>
-      <Name>Recipe</Name>
+      <Name>InstantChart</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -121,18 +121,6 @@
     <value>0, 756</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="displayDateLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 20</value>
-  </data>
-  <data name="displayDateLabel.Text" xml:space="preserve">
-    <value>1978年11月5日</value>
-  </data>
-  <data name="displayTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 20</value>
-  </data>
-  <data name="displayTimeLabel.Text" xml:space="preserve">
-    <value>上午 11:22:33</value>
-  </data>
   <data name="baseStatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 753</value>
   </data>
@@ -157,6 +145,18 @@
   </data>
   <data name="&gt;&gt;baseStatusStrip.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="displayDateLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 20</value>
+  </data>
+  <data name="displayDateLabel.Text" xml:space="preserve">
+    <value>1978年11月5日</value>
+  </data>
+  <data name="displayTimeLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 20</value>
+  </data>
+  <data name="displayTimeLabel.Text" xml:space="preserve">
+    <value>上午 11:22:33</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="textBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -264,32 +264,77 @@
   <data name="&gt;&gt;viewPanel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="signalTowerUnitControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="signalTowerUnitControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1246, 7</value>
-  </data>
-  <data name="signalTowerUnitControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 45</value>
-  </data>
-  <data name="signalTowerUnitControl1.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="signalTowerUnitControl1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;signalTowerUnitControl1.Name" xml:space="preserve">
     <value>signalTowerUnitControl1</value>
   </data>
   <data name="&gt;&gt;signalTowerUnitControl1.Type" xml:space="preserve">
-    <value>Maintain.SignalTowerUnitControl, Maintain, Version=1.0.5326.39884, Culture=neutral, PublicKeyToken=null</value>
+    <value>Maintain.SignalTowerUnitControl, Maintain, Version=1.0.5334.31626, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;signalTowerUnitControl1.Parent" xml:space="preserve">
     <value>panel6</value>
   </data>
   <data name="&gt;&gt;signalTowerUnitControl1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;operatorIDButton.Name" xml:space="preserve">
+    <value>operatorIDButton</value>
+  </data>
+  <data name="&gt;&gt;operatorIDButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;operatorIDButton.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;operatorIDButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1272, 66</value>
+  </data>
+  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -399,30 +444,6 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="panel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1272, 66</value>
-  </data>
-  <data name="panel6.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
-  </data>
-  <data name="&gt;&gt;panel6.Name" xml:space="preserve">
-    <value>panel6</value>
-  </data>
-  <data name="&gt;&gt;panel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="panel3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -513,256 +534,256 @@
   <data name="&gt;&gt;AlarmlistRadioButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="InspectRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="ParameterRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="InspectRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="ParameterRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="InspectRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ParameterRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="InspectRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="ParameterRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="InspectRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="ParameterRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="InspectRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ParameterRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>145, 5</value>
   </data>
-  <data name="InspectRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ParameterRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="InspectRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="ParameterRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="InspectRadioButton.Text" xml:space="preserve">
+  <data name="ParameterRadioButton.Text" xml:space="preserve">
     <value> Parameter</value>
   </data>
-  <data name="InspectRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="ParameterRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;InspectRadioButton.Name" xml:space="preserve">
-    <value>InspectRadioButton</value>
+  <data name="&gt;&gt;ParameterRadioButton.Name" xml:space="preserve">
+    <value>ParameterRadioButton</value>
   </data>
-  <data name="&gt;&gt;InspectRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;ParameterRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;InspectRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ParameterRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;InspectRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ParameterRadioButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="OperationRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="AutoModeRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="OperationRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="AutoModeRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="OperationRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="AutoModeRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="OperationRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="AutoModeRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="OperationRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="AutoModeRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="OperationRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="AutoModeRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 5</value>
   </data>
-  <data name="OperationRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AutoModeRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="OperationRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="AutoModeRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="OperationRadioButton.Text" xml:space="preserve">
+  <data name="AutoModeRadioButton.Text" xml:space="preserve">
     <value>Auto Mode</value>
   </data>
-  <data name="OperationRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="AutoModeRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;OperationRadioButton.Name" xml:space="preserve">
-    <value>OperationRadioButton</value>
+  <data name="&gt;&gt;AutoModeRadioButton.Name" xml:space="preserve">
+    <value>AutoModeRadioButton</value>
   </data>
-  <data name="&gt;&gt;OperationRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;AutoModeRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OperationRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AutoModeRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;OperationRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;AutoModeRadioButton.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="DatalogRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="PrintScreenRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="DatalogRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="PrintScreenRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="DatalogRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="PrintScreenRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="DatalogRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="PrintScreenRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="DatalogRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="PrintScreenRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="DatalogRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="PrintScreenRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>705, 5</value>
   </data>
-  <data name="DatalogRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="PrintScreenRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="DatalogRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="PrintScreenRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="DatalogRadioButton.Text" xml:space="preserve">
+  <data name="PrintScreenRadioButton.Text" xml:space="preserve">
     <value>Print Screen</value>
   </data>
-  <data name="DatalogRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="PrintScreenRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;DatalogRadioButton.Name" xml:space="preserve">
-    <value>DatalogRadioButton</value>
+  <data name="&gt;&gt;PrintScreenRadioButton.Name" xml:space="preserve">
+    <value>PrintScreenRadioButton</value>
   </data>
-  <data name="&gt;&gt;DatalogRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;PrintScreenRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;DatalogRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;PrintScreenRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;DatalogRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;PrintScreenRadioButton.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="CIMRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="InstantChartRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="CIMRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="InstantChartRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="CIMRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="InstantChartRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="CIMRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="InstantChartRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="CIMRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="InstantChartRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="CIMRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="InstantChartRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>285, 5</value>
   </data>
-  <data name="CIMRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="InstantChartRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="CIMRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="InstantChartRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="CIMRadioButton.Text" xml:space="preserve">
+  <data name="InstantChartRadioButton.Text" xml:space="preserve">
     <value>Instant Chart</value>
   </data>
-  <data name="CIMRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="InstantChartRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;CIMRadioButton.Name" xml:space="preserve">
-    <value>CIMRadioButton</value>
+  <data name="&gt;&gt;InstantChartRadioButton.Name" xml:space="preserve">
+    <value>InstantChartRadioButton</value>
   </data>
-  <data name="&gt;&gt;CIMRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;InstantChartRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CIMRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;InstantChartRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;CIMRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;InstantChartRadioButton.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="MaintainRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="AlarmRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="MaintainRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="AlarmRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="MaintainRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="AlarmRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="MaintainRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="AlarmRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="MaintainRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="AlarmRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="MaintainRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="AlarmRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>565, 5</value>
   </data>
-  <data name="MaintainRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="AlarmRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="MaintainRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="AlarmRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="MaintainRadioButton.Text" xml:space="preserve">
+  <data name="AlarmRadioButton.Text" xml:space="preserve">
     <value>Alarm</value>
   </data>
-  <data name="MaintainRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="AlarmRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;MaintainRadioButton.Name" xml:space="preserve">
-    <value>MaintainRadioButton</value>
+  <data name="&gt;&gt;AlarmRadioButton.Name" xml:space="preserve">
+    <value>AlarmRadioButton</value>
   </data>
-  <data name="&gt;&gt;MaintainRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;AlarmRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MaintainRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AlarmRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;MaintainRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;AlarmRadioButton.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="RecipeRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
+  <data name="HistoryChartRadioButton.Appearance" type="System.Windows.Forms.Appearance, System.Windows.Forms">
     <value>Button</value>
   </data>
-  <data name="RecipeRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="HistoryChartRadioButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="RecipeRadioButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="HistoryChartRadioButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
-  <data name="RecipeRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="HistoryChartRadioButton.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="RecipeRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="HistoryChartRadioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="RecipeRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="HistoryChartRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>425, 5</value>
   </data>
-  <data name="RecipeRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="HistoryChartRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
-  <data name="RecipeRadioButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="HistoryChartRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="RecipeRadioButton.Text" xml:space="preserve">
+  <data name="HistoryChartRadioButton.Text" xml:space="preserve">
     <value>History Chart</value>
   </data>
-  <data name="RecipeRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="HistoryChartRadioButton.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;RecipeRadioButton.Name" xml:space="preserve">
-    <value>RecipeRadioButton</value>
+  <data name="&gt;&gt;HistoryChartRadioButton.Name" xml:space="preserve">
+    <value>HistoryChartRadioButton</value>
   </data>
-  <data name="&gt;&gt;RecipeRadioButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;HistoryChartRadioButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;RecipeRadioButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;HistoryChartRadioButton.Parent" xml:space="preserve">
     <value>panel3</value>
   </data>
-  <data name="&gt;&gt;RecipeRadioButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;HistoryChartRadioButton.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="btnDecPanel.Location" type="System.Drawing.Point, System.Drawing">
@@ -810,6 +831,33 @@
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="signalTowerUnitControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="signalTowerUnitControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1246, 7</value>
+  </data>
+  <data name="signalTowerUnitControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 45</value>
+  </data>
+  <data name="signalTowerUnitControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="signalTowerUnitControl1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;signalTowerUnitControl1.Name" xml:space="preserve">
+    <value>signalTowerUnitControl1</value>
+  </data>
+  <data name="&gt;&gt;signalTowerUnitControl1.Type" xml:space="preserve">
+    <value>Maintain.SignalTowerUnitControl, Maintain, Version=1.0.5334.31626, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;signalTowerUnitControl1.Parent" xml:space="preserve">
+    <value>panel6</value>
+  </data>
+  <data name="&gt;&gt;signalTowerUnitControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -824,6 +872,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1272, 778</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

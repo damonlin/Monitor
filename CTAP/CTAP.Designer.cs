@@ -39,20 +39,20 @@
             this.baseTimer = new System.Windows.Forms.Timer(this.components);
             this.viewPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.signalTowerUnitControl1 = new Maintain.SignalTowerUnitControl();
             this.label2 = new System.Windows.Forms.Label();
             this.operatorIDButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ShutdownRadioButton = new System.Windows.Forms.RadioButton();
             this.AlarmlistRadioButton = new System.Windows.Forms.RadioButton();
-            this.InspectRadioButton = new System.Windows.Forms.RadioButton();
-            this.OperationRadioButton = new System.Windows.Forms.RadioButton();
-            this.DatalogRadioButton = new System.Windows.Forms.RadioButton();
-            this.CIMRadioButton = new System.Windows.Forms.RadioButton();
-            this.MaintainRadioButton = new System.Windows.Forms.RadioButton();
-            this.RecipeRadioButton = new System.Windows.Forms.RadioButton();
+            this.ParameterRadioButton = new System.Windows.Forms.RadioButton();
+            this.AutoModeRadioButton = new System.Windows.Forms.RadioButton();
+            this.PrintScreenRadioButton = new System.Windows.Forms.RadioButton();
+            this.InstantChartRadioButton = new System.Windows.Forms.RadioButton();
+            this.AlarmRadioButton = new System.Windows.Forms.RadioButton();
+            this.HistoryChartRadioButton = new System.Windows.Forms.RadioButton();
             this.btnDecPanel = new System.Windows.Forms.Panel();
+            this.signalTowerUnitControl1 = new Maintain.SignalTowerUnitControl();
             this.baseStatusStrip.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -130,12 +130,6 @@
             this.panel6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel6.Name = "panel6";
             // 
-            // signalTowerUnitControl1
-            // 
-            resources.ApplyResources(this.signalTowerUnitControl1, "signalTowerUnitControl1");
-            this.signalTowerUnitControl1.BackColor = System.Drawing.Color.Black;
-            this.signalTowerUnitControl1.Name = "signalTowerUnitControl1";
-            // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
@@ -163,12 +157,12 @@
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.Controls.Add(this.ShutdownRadioButton);
             this.panel3.Controls.Add(this.AlarmlistRadioButton);
-            this.panel3.Controls.Add(this.InspectRadioButton);
-            this.panel3.Controls.Add(this.OperationRadioButton);
-            this.panel3.Controls.Add(this.DatalogRadioButton);
-            this.panel3.Controls.Add(this.CIMRadioButton);
-            this.panel3.Controls.Add(this.MaintainRadioButton);
-            this.panel3.Controls.Add(this.RecipeRadioButton);
+            this.panel3.Controls.Add(this.ParameterRadioButton);
+            this.panel3.Controls.Add(this.AutoModeRadioButton);
+            this.panel3.Controls.Add(this.PrintScreenRadioButton);
+            this.panel3.Controls.Add(this.InstantChartRadioButton);
+            this.panel3.Controls.Add(this.AlarmRadioButton);
+            this.panel3.Controls.Add(this.HistoryChartRadioButton);
             this.panel3.Controls.Add(this.btnDecPanel);
             this.panel3.Name = "panel3";
             // 
@@ -196,77 +190,83 @@
             this.AlarmlistRadioButton.UseVisualStyleBackColor = false;
             this.AlarmlistRadioButton.Click += new System.EventHandler(this.Alarmlist_Click);
             // 
-            // InspectRadioButton
+            // ParameterRadioButton
             // 
-            resources.ApplyResources(this.InspectRadioButton, "InspectRadioButton");
-            this.InspectRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.InspectRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.InspectRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.InspectRadioButton.Name = "InspectRadioButton";
-            this.InspectRadioButton.TabStop = true;
-            this.InspectRadioButton.UseVisualStyleBackColor = false;
-            this.InspectRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.ParameterRadioButton, "ParameterRadioButton");
+            this.ParameterRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.ParameterRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ParameterRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.ParameterRadioButton.Name = "ParameterRadioButton";
+            this.ParameterRadioButton.TabStop = true;
+            this.ParameterRadioButton.UseVisualStyleBackColor = false;
+            this.ParameterRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
-            // OperationRadioButton
+            // AutoModeRadioButton
             // 
-            resources.ApplyResources(this.OperationRadioButton, "OperationRadioButton");
-            this.OperationRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.OperationRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.OperationRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.OperationRadioButton.Name = "OperationRadioButton";
-            this.OperationRadioButton.TabStop = true;
-            this.OperationRadioButton.UseVisualStyleBackColor = false;
-            this.OperationRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.AutoModeRadioButton, "AutoModeRadioButton");
+            this.AutoModeRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.AutoModeRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AutoModeRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.AutoModeRadioButton.Name = "AutoModeRadioButton";
+            this.AutoModeRadioButton.TabStop = true;
+            this.AutoModeRadioButton.UseVisualStyleBackColor = false;
+            this.AutoModeRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
-            // DatalogRadioButton
+            // PrintScreenRadioButton
             // 
-            resources.ApplyResources(this.DatalogRadioButton, "DatalogRadioButton");
-            this.DatalogRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.DatalogRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DatalogRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.DatalogRadioButton.Name = "DatalogRadioButton";
-            this.DatalogRadioButton.TabStop = true;
-            this.DatalogRadioButton.UseVisualStyleBackColor = false;
-            this.DatalogRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.PrintScreenRadioButton, "PrintScreenRadioButton");
+            this.PrintScreenRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.PrintScreenRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.PrintScreenRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.PrintScreenRadioButton.Name = "PrintScreenRadioButton";
+            this.PrintScreenRadioButton.TabStop = true;
+            this.PrintScreenRadioButton.UseVisualStyleBackColor = false;
+            this.PrintScreenRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
-            // CIMRadioButton
+            // InstantChartRadioButton
             // 
-            resources.ApplyResources(this.CIMRadioButton, "CIMRadioButton");
-            this.CIMRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.CIMRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.CIMRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.CIMRadioButton.Name = "CIMRadioButton";
-            this.CIMRadioButton.TabStop = true;
-            this.CIMRadioButton.UseVisualStyleBackColor = false;
-            this.CIMRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.InstantChartRadioButton, "InstantChartRadioButton");
+            this.InstantChartRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.InstantChartRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.InstantChartRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.InstantChartRadioButton.Name = "InstantChartRadioButton";
+            this.InstantChartRadioButton.TabStop = true;
+            this.InstantChartRadioButton.UseVisualStyleBackColor = false;
+            this.InstantChartRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
-            // MaintainRadioButton
+            // AlarmRadioButton
             // 
-            resources.ApplyResources(this.MaintainRadioButton, "MaintainRadioButton");
-            this.MaintainRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.MaintainRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.MaintainRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.MaintainRadioButton.Name = "MaintainRadioButton";
-            this.MaintainRadioButton.TabStop = true;
-            this.MaintainRadioButton.UseVisualStyleBackColor = false;
-            this.MaintainRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.AlarmRadioButton, "AlarmRadioButton");
+            this.AlarmRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.AlarmRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.AlarmRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.AlarmRadioButton.Name = "AlarmRadioButton";
+            this.AlarmRadioButton.TabStop = true;
+            this.AlarmRadioButton.UseVisualStyleBackColor = false;
+            this.AlarmRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
-            // RecipeRadioButton
+            // HistoryChartRadioButton
             // 
-            resources.ApplyResources(this.RecipeRadioButton, "RecipeRadioButton");
-            this.RecipeRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.RecipeRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.RecipeRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
-            this.RecipeRadioButton.Name = "RecipeRadioButton";
-            this.RecipeRadioButton.TabStop = true;
-            this.RecipeRadioButton.UseVisualStyleBackColor = false;
-            this.RecipeRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            resources.ApplyResources(this.HistoryChartRadioButton, "HistoryChartRadioButton");
+            this.HistoryChartRadioButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.HistoryChartRadioButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.HistoryChartRadioButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(230)))), ((int)(((byte)(250)))));
+            this.HistoryChartRadioButton.Name = "HistoryChartRadioButton";
+            this.HistoryChartRadioButton.TabStop = true;
+            this.HistoryChartRadioButton.UseVisualStyleBackColor = false;
+            this.HistoryChartRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
             // 
             // btnDecPanel
             // 
             this.btnDecPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(217)))));
             resources.ApplyResources(this.btnDecPanel, "btnDecPanel");
             this.btnDecPanel.Name = "btnDecPanel";
+            // 
+            // signalTowerUnitControl1
+            // 
+            resources.ApplyResources(this.signalTowerUnitControl1, "signalTowerUnitControl1");
+            this.signalTowerUnitControl1.BackColor = System.Drawing.Color.Black;
+            this.signalTowerUnitControl1.Name = "signalTowerUnitControl1";
             // 
             // CTAP
             // 
@@ -305,15 +305,15 @@
         private System.Windows.Forms.Panel viewPanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton MaintainRadioButton;
-        private System.Windows.Forms.RadioButton DatalogRadioButton;
-        private System.Windows.Forms.RadioButton OperationRadioButton;
-        private System.Windows.Forms.RadioButton RecipeRadioButton;
+        private System.Windows.Forms.RadioButton AlarmRadioButton;
+        private System.Windows.Forms.RadioButton PrintScreenRadioButton;
+        private System.Windows.Forms.RadioButton AutoModeRadioButton;
+        private System.Windows.Forms.RadioButton HistoryChartRadioButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button operatorIDButton;
         private Maintain.SignalTowerUnitControl signalTowerUnitControl1;
-        private System.Windows.Forms.RadioButton CIMRadioButton;
-        private System.Windows.Forms.RadioButton InspectRadioButton;
+        private System.Windows.Forms.RadioButton InstantChartRadioButton;
+        private System.Windows.Forms.RadioButton ParameterRadioButton;
         private System.Windows.Forms.Panel btnDecPanel;
         private System.Windows.Forms.RadioButton ShutdownRadioButton;
         private System.Windows.Forms.RadioButton AlarmlistRadioButton;

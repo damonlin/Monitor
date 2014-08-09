@@ -87,17 +87,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CIM\CIM.csproj">
+    <ProjectReference Include="..\CIM\HistoryChart.csproj">
       <Project>{AF7876BD-588D-43D6-9FFC-4999E4C88CB4}</Project>
-      <Name>CIM</Name>
+      <Name>HistoryChart</Name>
     </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{16C8E8F6-E87C-41A9-AFA0-2D155569212E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Datalog\Datalog.csproj">
+    <ProjectReference Include="..\Datalog\Alarm.csproj">
       <Project>{9BF7F3DC-0CE5-4758-9071-39746EECA29E}</Project>
-      <Name>Datalog</Name>
+      <Name>Alarm</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
