@@ -89,6 +89,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Maintain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maintain.Designer.cs">
+      <DependentUpon>Maintain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teaching\AxisInfo.cs" />
     <Compile Include="Teaching\CCClampTeachControl.cs">
       <SubType>UserControl</SubType>
@@ -205,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintain.resx">
+      <DependentUpon>Maintain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Teaching\CCClampTeachControl.resx">
       <DependentUpon>CCClampTeachControl.cs</DependentUpon>

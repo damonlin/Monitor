@@ -51,23 +51,19 @@ namespace Monitor
         private void InitControl()
         {           
             Common.Template.InfoPanelTemplate Operation = new Operate.Operate();
-
-            // Recipe Panel
-            Common.Template.NavigationPanelTemplate recipePanel = new Common.Template.NavigationPanelTemplate();           
-
-            // CIM Panel
-            Common.Template.NavigationPanelTemplate cimPanel = new Common.Template.NavigationPanelTemplate();   
-
-            // Datalog Panel
-            Common.Template.NavigationPanelTemplate datalogPanel = new Common.Template.NavigationPanelTemplate();
+            Common.Template.InfoPanelTemplate inspectPanel = new Inspect.InspectPanel();
+            Common.Template.InfoPanelTemplate recipePanel = new Recipe.RecipePanel();
+            Common.Template.InfoPanelTemplate cimPanel = new CIM.CimPanel();
+            Common.Template.InfoPanelTemplate datalogPanel = new DataLog.DataLogPanel();
+            Common.Template.InfoPanelTemplate maintainPanel = new Maintain.MaintainPanel();
                        
-            // Navigation Button             
+               
             navigationHashtable.Add("Operation", Operation);
-            navigationHashtable.Add("Inspect", Operation);
-            navigationHashtable.Add("CIM", Operation);
-            navigationHashtable.Add("Recipe", Operation);
-            navigationHashtable.Add("Datalog", Operation);
-            navigationHashtable.Add("Maintain", Operation);
+            navigationHashtable.Add("Inspect", inspectPanel);
+            navigationHashtable.Add("CIM", cimPanel);
+            navigationHashtable.Add("Recipe", recipePanel);
+            navigationHashtable.Add("Datalog", datalogPanel);
+            navigationHashtable.Add("Maintain", maintainPanel);
 
             foreach (string de in navigationHashtable.Keys)
             {

@@ -61,19 +61,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InspectPanel_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InspectPanel_1.Designer.cs">
+      <DependentUpon>InspectPanel_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="InspectPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="InspectPanel.Designer.cs">
       <DependentUpon>InspectPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="InspectPanel.resx">
+    <EmbeddedResource Include="InspectPanel_1.resx">
       <SubType>Designer</SubType>
+      <DependentUpon>InspectPanel_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InspectPanel.resx">
       <DependentUpon>InspectPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

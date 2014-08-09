@@ -43,7 +43,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Monitor.Properties.Resources.Contrel_Logo_New_Version_211X32__BG_White_1;
             this.pictureBox1.Location = new System.Drawing.Point(12, 14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
