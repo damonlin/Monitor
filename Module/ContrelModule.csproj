@@ -74,7 +74,7 @@
     </Compile>
     <Compile Include="CCLaserInterface.cs" />
     <Compile Include="CCVCRInterface.cs" />
- 
+    <Compile Include="CPLCInterface.cs" />
     <Compile Include="PG\Chroma.cs" />
     <Compile Include="LaserControl.cs">
       <SubType>UserControl</SubType>
@@ -131,7 +131,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>ZMotionControl.cs</DependentUpon>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="LaserControl.resx">
       <DependentUpon>LaserControl.cs</DependentUpon>
       <SubType>Designer</SubType>
