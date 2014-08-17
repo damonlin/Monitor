@@ -10,7 +10,7 @@ using IniTool;
 namespace ContrelModule
 {
    public class CPLCInterface
-   {
+   {        
        #region Public Member
        public class PLCData
        {
@@ -21,7 +21,7 @@ namespace ContrelModule
            public string m_WaitTime { get; set; }               // 報文等待
            public string m_RcvData { get; set; }                // Data
            public string m_CheckSum { get; set; }               // Checksum
-       }
+       }   
 
        public enum CONTROL_CODE
        {
@@ -354,50 +354,6 @@ namespace ContrelModule
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
            m_SerialPort.Write(cmd.ToString());
-       }
-
-       public void PLCDataReceived(object sender, SerialDataReceivedEventArgs e)
-       {
-           //return;
-
-           byte[] data = Receive();
-           int iOffset = 0;
-
-           if (data.Length <= 0)
-               return;
-
-           //int iLength = 0;
-           //for (iLength = 0; iLength < data.Length; ++iLength)
-           //{
-           //    if (data[iLength] == (int)CONTROL_CODE.ETX)
-           //        break;
-           //}
-
-           //byte[] rcvData = new byte[iLength];
-           //Array.Copy(data, 0, rcvData, 0, rcvData.Length);
-
-           //m_PLCRcvData.Enqueue(DecodePLCData(rcvData));
-
-           switch (data[iOffset])
-           {
-               case (int)CONTROL_CODE.ACK: // 'V'                   
-                   break;
-
-               case (int)CONTROL_CODE.STX: // 'V'
-                   //PLCReadWord_R();
-                   //PLCWriteWord();
-                   //PLCSendACK();
-                   break;
-
-               case (int)CONTROL_CODE.ETX: // 'V'
-                   //PLCReadWord();
-                   //PLCWriteWord();
-                   //PLCSendACK();
-                   break;
-
-               case (int)CONTROL_CODE.NAK: // 'V'
-                   break;
-           }
        }
 
        public void DoReceive()
