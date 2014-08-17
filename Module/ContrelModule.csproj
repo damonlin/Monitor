@@ -75,33 +75,8 @@
     <Compile Include="AuxiliaryFunction\ZMotionSetup.Designer.cs">
       <DependentUpon>ZMotionSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="CCLaserInterface.cs" />
-    <Compile Include="CCVCRInterface.cs" />
-    <Compile Include="ComPort.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>ComPort.settings</DependentUpon>
-    </Compile>
     <Compile Include="CPLCInterface.cs" />
     <Compile Include="PG\Chroma.cs" />
-    <Compile Include="LaserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LaserControl.Designer.cs">
-      <DependentUpon>LaserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LaserParaAdjust.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LaserParaAdjust.Designer.cs">
-      <DependentUpon>LaserParaAdjust.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherFunction.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="OtherFunction.Designer.cs">
-      <DependentUpon>OtherFunction.cs</DependentUpon>
-    </Compile>
     <Compile Include="PG\PatternGenerator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,12 +88,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="SystemStatus.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SystemStatus.Designer.cs">
-      <DependentUpon>SystemStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="AuxiliaryFunction\ZMotionLib.cs" />
   </ItemGroup>
@@ -139,18 +108,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>ZMotionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LaserControl.resx">
-      <DependentUpon>LaserControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LaserParaAdjust.resx">
-      <DependentUpon>LaserParaAdjust.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherFunction.resx">
-      <DependentUpon>OtherFunction.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="PG\PatternGenerator.resx">
       <DependentUpon>PatternGenerator.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -158,10 +115,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SystemStatus.resx">
-      <DependentUpon>SystemStatus.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -177,10 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="ComPort.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>ComPort.Designer.cs</LastGenOutput>
-    </None>
     <None Include="Resources\Button-Blank-Blue-icon.png" />
   </ItemGroup>
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace Monitor
             Thread th = new Thread(new ThreadStart(ShowLoadingForm));
             th.Start();
 
-            AlarmList.AlarmReportForm.getSingleton();
+            //AlarmList.AlarmReportForm.getSingleton();
                         
             InitializeComponent();
             InitControl();
@@ -89,12 +89,6 @@ namespace Monitor
             {
                 displayDateLabel.Text = DateTime.Now.ToLongDateString();
                 displayTimeLabel.Text = DateTime.Now.ToLongTimeString();               
-
-                if (Common.GlobalValue.AlarmQueue.Count != 0)
-                {
-                    AlarmList.AlarmReportForm.getSingleton().ReportAlarm(Common.GlobalValue.AlarmQueue.Dequeue());
-                    Alarmlist_Click(sender, EventArgs.Empty);
-                }
             }
         }
 
@@ -123,22 +117,12 @@ namespace Monitor
             }
                 
             else */
-            if (sender == AlarmlistRadioButton)
-            {
 
-                if (AlarmList.AlarmReportForm.getSingleton().Visible == false)
-                    AlarmList.AlarmReportForm.getSingleton().Show(this);
-                else
-                    AlarmList.AlarmReportForm.getSingleton().Activate();
-            }
         }
 
         private void Alarmlist_Click(object sender, EventArgs e)
         {
-            if (AlarmList.AlarmReportForm.getSingleton().Visible == false)
-                AlarmList.AlarmReportForm.getSingleton().Show(this);
-            else
-                AlarmList.AlarmReportForm.getSingleton().Activate();
+           
         }
 
         private void Shutdown_Click(object sender, EventArgs e)

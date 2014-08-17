@@ -52,7 +52,7 @@
             this.AlarmRadioButton = new System.Windows.Forms.RadioButton();
             this.HistoryChartRadioButton = new System.Windows.Forms.RadioButton();
             this.btnDecPanel = new System.Windows.Forms.Panel();
-            this.signalTowerUnitControl1 = new Maintain.SignalTowerUnitControl();
+            
             this.baseStatusStrip.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,8 +119,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(216)))));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.signalTowerUnitControl1);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;            
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.operatorIDButton);
             this.panel6.Controls.Add(this.pictureBox1);
@@ -261,12 +260,7 @@
             this.btnDecPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(217)))));
             resources.ApplyResources(this.btnDecPanel, "btnDecPanel");
             this.btnDecPanel.Name = "btnDecPanel";
-            // 
-            // signalTowerUnitControl1
-            // 
-            resources.ApplyResources(this.signalTowerUnitControl1, "signalTowerUnitControl1");
-            this.signalTowerUnitControl1.BackColor = System.Drawing.Color.Black;
-            this.signalTowerUnitControl1.Name = "signalTowerUnitControl1";
+           
             // 
             // CTAP
             // 
@@ -310,8 +304,7 @@
         private System.Windows.Forms.RadioButton AutoModeRadioButton;
         private System.Windows.Forms.RadioButton HistoryChartRadioButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button operatorIDButton;
-        private Maintain.SignalTowerUnitControl signalTowerUnitControl1;
+        private System.Windows.Forms.Button operatorIDButton;        
         private System.Windows.Forms.RadioButton InstantChartRadioButton;
         private System.Windows.Forms.RadioButton ParameterRadioButton;
         private System.Windows.Forms.Panel btnDecPanel;

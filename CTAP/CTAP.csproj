@@ -159,10 +159,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlarmList\AlarmList.csproj">
-      <Project>{242B3D49-7157-454F-BDCD-D1E6F6932F54}</Project>
-      <Name>AlarmList</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CIM\HistoryChart.csproj">
       <Project>{AF7876BD-588D-43D6-9FFC-4999E4C88CB4}</Project>
       <Name>HistoryChart</Name>
