@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IniTool">
+      <HintPath>..\CTAP\bin\Debug\Library\IniTool.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -74,6 +77,11 @@
     </Compile>
     <Compile Include="CCLaserInterface.cs" />
     <Compile Include="CCVCRInterface.cs" />
+    <Compile Include="ComPort.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ComPort.settings</DependentUpon>
+    </Compile>
     <Compile Include="CPLCInterface.cs" />
     <Compile Include="PG\Chroma.cs" />
     <Compile Include="LaserControl.cs">
@@ -168,6 +176,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ComPort.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ComPort.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Resources\Button-Blank-Blue-icon.png" />
   </ItemGroup>
   <ItemGroup>

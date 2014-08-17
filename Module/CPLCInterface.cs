@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.Configuration;
+using IniTool;
 
 namespace ContrelModule
 {
@@ -42,6 +44,8 @@ namespace ContrelModule
        private SerialPort m_SerialPort = null;
        private ConcurrentQueue<PLCData> m_PLCRcvData = new ConcurrentQueue<PLCData>();      
        static private CPLCInterface Singleton;
+
+       private const string strINIPath = "INI\\RS232.INI";
        private const string STATION_NAME = "00";
        private const string PC_NUMBER = "FF";
        #endregion       
@@ -69,7 +73,8 @@ namespace ContrelModule
         protected CPLCInterface()
         {
             m_SerialPort = new SerialPort();
-            //m_SerialPort.DataReceived += new SerialDataReceivedEventHandler(this.PLCDataReceived);            
+
+            LoadIniFile();            
         }
         #endregion
 
@@ -168,28 +173,9 @@ namespace ContrelModule
             return data;
        }
 
-       public void PLCConnect(string startAddr, int count)
-       {
-           //ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
-           StringBuilder cmd = new StringBuilder(30);
-
-           cmd.Append((char)CONTROL_CODE.ENQ);
-           cmd.Append(STATION_NAME);
-           cmd.Append(PC_NUMBER);
-           cmd.Append("WR");
-           cmd.Append("A");
-           cmd.Append("D0008");
-           cmd.Append("01");
-           //cmd.Append(count.ToString("01"));
-
-           string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
-       }
-
        public void PLCWriteWord_D(string value)
        {
-           //ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
+           // ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
            StringBuilder cmd = new StringBuilder(100);
 
            cmd.Append((char)CONTROL_CODE.ENQ);
@@ -200,13 +186,32 @@ namespace ContrelModule
            cmd.Append("D0200");
            cmd.Append("09");
            //cmd.Append(String.Format("{0:D4}", Convert.ToInt32(value)));
-           cmd.Append("111111111111111111111111111111111111");
-           //cmd.Append(count.ToString("01"));
+           cmd.Append("111111111111111111111111111111111111");           
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
            m_SerialPort.Write(cmd.ToString());
        }
+
+       public void PLCWriteWord_D(string startAddr, int count, string value)
+       {
+           // ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
+           StringBuilder cmd = new StringBuilder(100);
+
+           cmd.Append((char)CONTROL_CODE.ENQ);
+           cmd.Append(STATION_NAME);
+           cmd.Append(PC_NUMBER);
+           cmd.Append("WW");
+           cmd.Append("A");
+           cmd.Append(startAddr);
+           cmd.Append(count.ToString("01"));
+           cmd.Append(value);
+
+           string checksum = CheckSum(cmd);
+           cmd.Append(checksum);
+           m_SerialPort.Write(cmd.ToString());
+       }
+
        public void PLCReadWord_D()
        {
            //ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
@@ -417,7 +422,25 @@ namespace ContrelModule
        #endregion
 
        #region Private Method
-       
+
+       private void LoadIniFile()
+       {
+           IniFile iniFile = new IniFile(strINIPath);
+
+           int port = iniFile.GetInt32("RS232", "ComPort", 0);
+           PortNumber = string.Format("COM{0:d}", port);
+
+           PortBoudrate = iniFile.GetInt32("RS232", "Boudrate", 0);
+
+           string stop = iniFile.GetString("RS232", "StopBits", "");
+           PortStopBits = (StopBits)Enum.Parse(typeof(StopBits), stop);
+
+           string parity = iniFile.GetString("RS232", "Parity", "");
+           PortParity = (Parity)Enum.Parse(typeof(Parity), parity);
+
+           PortDataBits = iniFile.GetInt32("RS232", "DataBits", 0);
+       }
+
        private string CheckSum(StringBuilder str)
        {
             //宣告：int為整數、string為字符串
