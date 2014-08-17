@@ -179,6 +179,10 @@
       <Project>{A9DDCCF9-34C8-419A-8D54-6CD7E70557E7}</Project>
       <Name>PrintScreen</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Module\ContrelModule.csproj">
+      <Project>{8c964985-018d-442b-b6cb-9a7e2bfdbd81}</Project>
+      <Name>ContrelModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Monitor\Monitor.csproj">
       <Project>{F96C95F1-DA95-4788-A283-2C573A29865F}</Project>
       <Name>Monitor</Name>

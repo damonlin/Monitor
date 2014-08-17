@@ -9,6 +9,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
+using ContrelModule;
 
 namespace Monitor
 {
@@ -128,7 +129,11 @@ namespace Monitor
         private void Shutdown_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Shutdown The Application", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {                                
+            {
+                // 關閉 PLC thread
+                ContrelModule.CPLCInterface.GetSingleton().receiving = false;
+                Thread.Sleep(100);
+
                 Application.Exit();                
             }
         }

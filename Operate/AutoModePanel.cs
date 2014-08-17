@@ -11,7 +11,6 @@ using Common.Template;
 using ContrelModule;
 using System.IO.Ports;
 using System.Threading;
-using System.Configuration;
 
 namespace AutoMode
 {
@@ -27,8 +26,9 @@ namespace AutoMode
            
             try
             {
-                //m_PLCInterface.Open();
-                //m_ConnectHandler(this, null);
+#if PLC_ON
+                m_PLCInterface.Open();
+#endif
             }
             catch (Exception e)
             {
@@ -42,12 +42,7 @@ namespace AutoMode
             plcThread.IsBackground = true;
             plcThread.Start();
 #endif
-        }
-
-        ~AutoModePanel()
-        {
-            m_PLCInterface.receiving = false;
-        }
+        }     
 
         public static AutoModePanel getSingleton()
         {
