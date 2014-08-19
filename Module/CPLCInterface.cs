@@ -204,7 +204,7 @@ namespace ContrelModule
            cmd.Append("WW");
            cmd.Append("A");
            cmd.Append(startAddr);
-           cmd.Append(count.ToString("01"));
+           cmd.Append(count.ToString("D2"));
            cmd.Append(value);
 
            string checksum = CheckSum(cmd);
@@ -231,7 +231,7 @@ namespace ContrelModule
            m_SerialPort.Write(cmd.ToString());
        }
 
-       public void PLCWriteBit_M()
+       public void PLCWriteBit_M(string addr, int count, bool bOn)
        {
            //ENQ + 站號 + PLC型號 + BR + 延時 + 開始位址 + 長度 + checksum
            StringBuilder cmd = new StringBuilder(30);
@@ -241,9 +241,18 @@ namespace ContrelModule
            cmd.Append(PC_NUMBER);
            cmd.Append("BW");
            cmd.Append("A");
-           cmd.Append("M0010");
-           cmd.Append("05");
-           cmd.Append("00001");
+           cmd.Append(addr);
+           cmd.Append(count.ToString("D2"));
+
+           int value1 = (bOn) ? 1 : 0;
+           cmd.Append(value1.ToString());
+
+           if (count == 2)
+           {
+               int value2 = (bOn) ? 0 : 1;
+               cmd.Append(value2.ToString());
+           }
+           
            //cmd.Append(count.ToString("01"));
 
            string checksum = CheckSum(cmd);
