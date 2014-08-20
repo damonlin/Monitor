@@ -30,9 +30,7 @@ namespace AutoMode
            
             try
             {
-#if PLC_ON
                 m_PLCInterface.Open();
-#endif
             }
             catch (Exception e)
             {

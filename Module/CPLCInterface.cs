@@ -1,4 +1,4 @@
-﻿#define PLC_ON
+﻿//#define PLC_ON
 
 using System;
 using System.Collections.Concurrent;
@@ -8,7 +8,6 @@ using System.IO.Ports;
 using System.Windows.Forms;
 using System.Configuration;
 using IniTool;
-using System.Threading;
 
 namespace ContrelModule
 {
@@ -200,19 +199,25 @@ namespace ContrelModule
 
        public void Open()
        {
+#if PLC_ON
             m_SerialPort.Open();
+#endif
        }
 
        public void Close()
        {
+#if PLC_ON
             m_SerialPort.Close();
+#endif
        }
 
        public byte[] Receive()
        {
             int nbytes = m_SerialPort.BytesToRead;
             byte[] data = new byte[nbytes];
+#if PLC_ON
             m_SerialPort.Read(data, 0, data.Length);
+#endif
             return data;
        }
        
@@ -327,50 +332,7 @@ namespace ContrelModule
            //m_SerialPort.Write(cmd.ToString());
            PLCSndData = cmd.ToString();
        }
-
-       
-       public void PLCWriteWord_R()
-       {
-           //STX　Cmd　Addrs　Bytes　Data　ETX　SUM
-           StringBuilder cmd = new StringBuilder(30);
-
-           cmd.Append((char)CONTROL_CODE.STX);
-           cmd.Append("1");
-           cmd.Append("10F6");  // address    
-           cmd.Append("04");    // byte 數
-
-           // D123: 12 34
-           // D124: AB CD
-           cmd.Append("22");    // 第一筆資料
-           cmd.Append("33");
-           cmd.Append("11");
-           cmd.Append("44");
-           cmd.Append((char)CONTROL_CODE.ETX);
-
-           string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           //m_SerialPort.Write(cmd.ToString());
-           PLCSndData = cmd.ToString();
-       }       
-
-       public void PLCReadWord_R()
-       {
-           //STX　Cmd　Addrs　Bytes　Data　ETX　SUM
-           StringBuilder cmd = new StringBuilder(30);
-
-           cmd.Append((char)CONTROL_CODE.STX);
-           cmd.Append("0");
-           cmd.Append("00A0");  // address    
-           cmd.Append("02");    // byte 數
-
-           cmd.Append((char)CONTROL_CODE.ETX);
-
-           string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           //m_SerialPort.Write(cmd.ToString());
-           PLCSndData = cmd.ToString();
-       }
-
+         
        public PLCData DecodePLCData(byte[] rcvData)
        {
            if (rcvData[0] != (int)CONTROL_CODE.STX)
@@ -408,6 +370,7 @@ namespace ContrelModule
            //Byte[] buffer = new Byte[1024];
            while ( m_bReceiving )
            {
+#if PLC_ON
                if ( m_SerialPort.BytesToRead > 0 )
                {                   
                    //Int32 length = m_SerialPort.Read(buffer, 0, buffer.Length);
@@ -419,6 +382,7 @@ namespace ContrelModule
                        m_PLCRcvQueue.Enqueue(data);
                }
                Thread.Sleep(16);
+#endif
            }
        }
 
@@ -429,7 +393,9 @@ namespace ContrelModule
                if ( m_PLCSndQueue.Count > 0 )
                {
                    string data = PLCSndData;
+#if PLC_ON
                    m_SerialPort.Write(data);
+#endif
                }           
                Thread.Sleep(16);
            }
