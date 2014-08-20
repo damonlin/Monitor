@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Common.Template;
 using ContrelModule;
 using System.IO.Ports;
-using System.Threading;
 
 namespace AutoMode
 {
@@ -18,7 +17,7 @@ namespace AutoMode
     {
         private static AutoModePanel singleton = null;
         private ContrelModule.CPLCInterface m_PLCInterface = ContrelModule.CPLCInterface.GetSingleton();
-        private Thread plcThread;
+        
 
         private bool bRVON = false;
         private bool bVVON = false;
@@ -38,14 +37,6 @@ namespace AutoMode
             {
                 MessageBox.Show("[" + e.Message + "]" + " Can't Open : " + m_PLCInterface.PortNumber);
             }
-
-#if PLC_ON
-            // For Threading
-            m_PLCInterface.receiving = true;
-            plcThread = new Thread(m_PLCInterface.DoReceive);
-            plcThread.IsBackground = true;
-            plcThread.Start();
-#endif
         }     
 
         public static AutoModePanel getSingleton()

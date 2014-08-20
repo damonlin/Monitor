@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define PLC_ON
+
+using System;
 using System.Collections.Concurrent;
 using System.Text;
 using System.Threading;
@@ -6,6 +8,7 @@ using System.IO.Ports;
 using System.Windows.Forms;
 using System.Configuration;
 using IniTool;
+using System.Threading;
 
 namespace ContrelModule
 {
@@ -34,20 +37,27 @@ namespace ContrelModule
            CL = '\x0C',
            CR = '\x0D',
            NAK = '\x15'
-       };
+       };       
 
-       public bool receiving;
        #endregion
 
        #region Private Member
 
        private SerialPort m_SerialPort = null;
-       private ConcurrentQueue<PLCData> m_PLCRcvData = new ConcurrentQueue<PLCData>();      
+       private ConcurrentQueue<PLCData> m_PLCRcvQueue = new ConcurrentQueue<PLCData>();
+       private ConcurrentQueue<string> m_PLCSndQueue = new ConcurrentQueue<string>();
+
        static private CPLCInterface Singleton;
 
        private const string strINIPath = "INI\\RS232.INI";
        private const string STATION_NAME = "00";
        private const string PC_NUMBER = "FF";
+
+       // For Threading
+       private bool m_bReceiving = false;
+       private bool m_bSending = false;
+       private Thread m_plcRcvThread;
+       private Thread m_plcSndThread;
        #endregion       
 
        #region Pulic Member
@@ -56,7 +66,7 @@ namespace ContrelModule
            get
            {
                PLCData data;
-               while( m_PLCRcvData.TryDequeue(out data) )
+               while (m_PLCRcvQueue.TryDequeue(out data))
                {
                    return data;
                }
@@ -64,7 +74,24 @@ namespace ContrelModule
            }
            set
            {
-               m_PLCRcvData.Enqueue(value);
+               m_PLCRcvQueue.Enqueue(value);
+           }
+       }
+
+       public string PLCSndData
+       {
+           get
+           {
+               string data;
+               while (m_PLCSndQueue.TryDequeue(out data))
+               {
+                   return data;
+               }
+               return null;
+           }
+           set
+           {
+               m_PLCSndQueue.Enqueue(value);
            }
        }
         #endregion
@@ -74,7 +101,10 @@ namespace ContrelModule
         {
             m_SerialPort = new SerialPort();
 
-            LoadIniFile();            
+            LoadIniFile();
+
+            CreateThreads();
+
         }
         #endregion
 
@@ -172,6 +202,7 @@ namespace ContrelModule
             m_SerialPort.Read(data, 0, data.Length);
             return data;
        }
+       
 
        public void PLCWriteWord_D(string value)
        {
@@ -190,7 +221,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        public void PLCWriteWord_D(string startAddr, int count, string value)
@@ -209,7 +241,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        public void PLCReadWord_D()
@@ -228,7 +261,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        public void PLCWriteBit_M(string addr, int count, bool bOn)
@@ -257,7 +291,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        public void PLCReadBit_M()
@@ -276,7 +311,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        
@@ -300,7 +336,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }       
 
        public void PLCReadWord_R()
@@ -317,7 +354,8 @@ namespace ContrelModule
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
+           //m_SerialPort.Write(cmd.ToString());
+           PLCSndData = cmd.ToString();
        }
 
        public PLCData DecodePLCData(byte[] rcvData)
@@ -350,25 +388,12 @@ namespace ContrelModule
 
 
            return data;
-       }
-       
-       public void PLCSendACK()
-       {
-           //STX　Cmd　Addrs　Bytes　Data　ETX　SUM
-           StringBuilder cmd = new StringBuilder(30);
-
-           cmd.Append((char)CONTROL_CODE.ACK);
-           cmd.Append("00FF");
-           
-           string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           m_SerialPort.Write(cmd.ToString());
-       }
+       }      
 
        public void DoReceive()
        {
            //Byte[] buffer = new Byte[1024];
-           while (receiving)
+           while ( m_bReceiving )
            {
                if ( m_SerialPort.BytesToRead > 0 )
                {                   
@@ -378,8 +403,21 @@ namespace ContrelModule
 
                    PLCData data = DecodePLCData(buffer);
                    if (data != null )
-                       m_PLCRcvData.Enqueue(data);
+                       m_PLCRcvQueue.Enqueue(data);
                }
+               Thread.Sleep(16);
+           }
+       }
+
+       public void DoSend()
+       {           
+           while ( m_bSending )
+           {
+               if ( m_PLCSndQueue.Count > 0 )
+               {
+                   string data = PLCSndData;
+                   m_SerialPort.Write(data);
+               }           
                Thread.Sleep(16);
            }
        }
@@ -387,6 +425,23 @@ namespace ContrelModule
        #endregion
 
        #region Private Method
+
+      
+
+       private void CreateThreads()
+       {
+           // For Recive Thread
+           m_bReceiving = true;
+           m_plcRcvThread = new Thread( DoReceive );
+           m_plcRcvThread.IsBackground = true;
+           m_plcRcvThread.Start();
+
+           // For Recive Thread
+           m_bReceiving = true;
+           m_plcSndThread = new Thread( DoSend);
+           m_plcSndThread.IsBackground = true;
+           m_plcSndThread.Start();                
+       }
 
        private void LoadIniFile()
        {
