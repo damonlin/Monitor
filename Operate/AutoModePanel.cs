@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Common.Template;
 using ContrelModule;
 using System.IO.Ports;
+using System.Threading;
 
 namespace AutoMode
 {

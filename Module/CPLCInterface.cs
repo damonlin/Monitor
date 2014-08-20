@@ -185,6 +185,19 @@ namespace ContrelModule
            return Singleton;
        }
 
+       public void CloseAllThreads()
+       {
+           m_bReceiving = false;
+           m_bSending = false;
+
+           bool wait = true;
+           while (wait)
+           {
+               wait = m_plcRcvThread.IsAlive | m_plcSndThread.IsAlive;
+               Thread.Sleep(16);
+           }
+       }
+
        public void Open()
        {
             m_SerialPort.Open();

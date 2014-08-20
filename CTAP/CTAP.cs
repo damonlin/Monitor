@@ -131,9 +131,7 @@ namespace Monitor
             if (MessageBox.Show("Shutdown The Application", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 // 關閉 PLC thread
-                ContrelModule.CPLCInterface.GetSingleton().receiving = false;
-                Thread.Sleep(100);
-
+                ContrelModule.CPLCInterface.GetSingleton().CloseAllThreads();               
                 Application.Exit();                
             }
         }
