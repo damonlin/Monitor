@@ -16,12 +16,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.plcTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -261,53 +261,53 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.85714F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 191F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 383F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 259F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 446F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(435, 954);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // m_LVGChart
             // 
-            chartArea6.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea6.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea6.Name = "Default";
-            chartArea6.Position.Auto = false;
-            chartArea6.Position.Height = 94F;
-            chartArea6.Position.Width = 100F;
-            chartArea6.Position.Y = 3F;
-            this.m_LVGChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.m_LVGChart.Legends.Add(legend6);
+            chartArea8.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea8.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea8.Name = "Default";
+            chartArea8.Position.Auto = false;
+            chartArea8.Position.Height = 94F;
+            chartArea8.Position.Width = 100F;
+            chartArea8.Position.Y = 3F;
+            this.m_LVGChart.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.m_LVGChart.Legends.Add(legend8);
             this.m_LVGChart.Location = new System.Drawing.Point(3, 81);
             this.m_LVGChart.Name = "m_LVGChart";
-            series6.ChartArea = "Default";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.m_LVGChart.Series.Add(series6);
+            series8.ChartArea = "Default";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.m_LVGChart.Series.Add(series8);
             this.m_LVGChart.Size = new System.Drawing.Size(429, 185);
             this.m_LVGChart.TabIndex = 2;
             this.m_LVGChart.Text = "chart1";
             // 
             // m_HVGChart
             // 
-            chartArea5.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea5.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea5.Name = "Default";
-            chartArea5.Position.Auto = false;
-            chartArea5.Position.Height = 94F;
-            chartArea5.Position.Width = 100F;
-            chartArea5.Position.Y = 3F;
-            this.m_HVGChart.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.m_HVGChart.Legends.Add(legend5);
+            chartArea7.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea7.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea7.Name = "Default";
+            chartArea7.Position.Auto = false;
+            chartArea7.Position.Height = 94F;
+            chartArea7.Position.Width = 100F;
+            chartArea7.Position.Y = 3F;
+            this.m_HVGChart.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.m_HVGChart.Legends.Add(legend7);
             this.m_HVGChart.Location = new System.Drawing.Point(3, 314);
             this.m_HVGChart.Name = "m_HVGChart";
-            series5.ChartArea = "Default";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.m_HVGChart.Series.Add(series5);
+            series7.ChartArea = "Default";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.m_HVGChart.Series.Add(series7);
             this.m_HVGChart.Size = new System.Drawing.Size(429, 185);
             this.m_HVGChart.TabIndex = 6;
             this.m_HVGChart.Text = "chart1";
