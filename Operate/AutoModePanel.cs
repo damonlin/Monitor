@@ -59,15 +59,23 @@ namespace AutoMode
             if (data != null)
             {
                 labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(0, 4));
-                labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(4, 4));
-                //labelLVG.Text = data.m_RcvData.Substring(0, 4);
-                //labelHVG.Text = data.m_RcvData.Substring(4, 4);
+                labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(4, 4));              
             }
 
             m_PLCInterface.PLCReadBit_M();
 
             ProcessChart(m_LVGChart);
             ProcessChart(m_HVGChart);
+
+            if (bRVON)
+                btnRVSwitch.BackColor = Color.Green;
+            else
+                btnRVSwitch.BackColor = Color.Red;
+
+            if (bVVON)
+                btnVVSwitch.BackColor = Color.Green;
+            else
+                btnVVSwitch.BackColor = Color.Red;
         }
 
         private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart )
@@ -122,26 +130,18 @@ namespace AutoMode
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
         {
-            bRVON = !bRVON;
-
-            if (bRVON)
-                btnRVSwitch.Text = "RV ON";
-            else
-                btnRVSwitch.Text = "RV OFF";
-
-            m_PLCInterface.PLCWriteBit_M("M2020",2,  bRVON);
+            ConfirmDialog dlg = new ConfirmDialog(bRVON);
+            DialogResult retval = dlg.ShowDialog();
+            bRVON = dlg.ON;
+            m_PLCInterface.PLCWriteBit_M("M2020", 2, bRVON);
         }
 
         private void btnVVSwitch_Click(object sender, EventArgs e)
         {
-            bVVON = !bVVON;
-
-            if (bVVON)
-                btnVVSwitch.Text = "VV ON";
-            else
-                btnVVSwitch.Text = "VV OFF";
-
-            m_PLCInterface.PLCWriteBit_M("M2022", 2,  bVVON);
+            ConfirmDialog dlg = new ConfirmDialog(bVVON);
+            DialogResult retval = dlg.ShowDialog();
+            bVVON = dlg.ON;
+            m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
         }
 
         private void btnAuto_Click(object sender, EventArgs e)
@@ -160,6 +160,5 @@ namespace AutoMode
         {
             m_PLCInterface.PLCWriteBit_M("M2001", 1, true);
         }
-     
     }
 }
