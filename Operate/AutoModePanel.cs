@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization;
 using Common.Template;
 using ContrelModule;
 using System.IO.Ports;
@@ -37,7 +38,7 @@ namespace AutoMode
             catch (Exception e)
             {
                 MessageBox.Show("[" + e.Message + "]" + " Can't Open : " + m_PLCInterface.PortNumber);
-            }
+            }         
         }     
 
         public static AutoModePanel getSingleton()
@@ -65,44 +66,46 @@ namespace AutoMode
 
             m_PLCInterface.PLCReadBit_M();
 
-            ProcessChart();
+            ProcessChart(m_LVGChart);
+            ProcessChart(m_HVGChart);
         }
 
-        private void ProcessChart()
+        private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart )
         {
-            int numberOfPointsInChart = 10;
-            int numberOfPointsAfterRemoval = 10;
+            int numberOfPointsInChart = 7;
+            int numberOfPointsAfterRemoval = 7;
 
             int newX = pointIndex + 1;
-            int newY = random.Next(100, 500);
+            int newY = random.Next(600, 700);
 
             DateTime now = DateTime.Now;
 
-            m_LVGChart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), ConvertToTorr(newY.ToString()));
+            string temp = ConvertToTorr(newY.ToString());
+            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), ConvertToTorr(newY.ToString()));      
             ++pointIndex;
 
-            m_LVGChart.ResetAutoValues();
-            if (m_LVGChart.ChartAreas["Default"].AxisX.Maximum < pointIndex)
+            chart.ResetAutoValues();
+            if (chart.ChartAreas["Default"].AxisX.Maximum < pointIndex)
             {
-                m_LVGChart.ChartAreas["Default"].AxisX.Maximum = pointIndex;
+                chart.ChartAreas["Default"].AxisX.Maximum = pointIndex;
             }
 
             // Keep a constant number of points by removing them from the left
-            while (m_LVGChart.Series[0].Points.Count > numberOfPointsInChart)
+            while (chart.Series[0].Points.Count > numberOfPointsInChart)
             {
                 // Remove data points on the left side
-                while (m_LVGChart.Series[0].Points.Count > numberOfPointsAfterRemoval)
+                while (chart.Series[0].Points.Count > numberOfPointsAfterRemoval)
                 {
-                    m_LVGChart.Series[0].Points.RemoveAt(0);
+                    chart.Series[0].Points.RemoveAt(0);
                 }
 
                 // Adjust X axis scale
-                m_LVGChart.ChartAreas["Default"].AxisX.Minimum = pointIndex - numberOfPointsAfterRemoval;
-                m_LVGChart.ChartAreas["Default"].AxisX.Maximum = m_LVGChart.ChartAreas["Default"].AxisX.Minimum + numberOfPointsInChart;
+                //m_LVGChart.ChartAreas["Default"].AxisX.Minimum = pointIndex - numberOfPointsAfterRemoval;
+                //m_LVGChart.ChartAreas["Default"].AxisX.Maximum = m_LVGChart.ChartAreas["Default"].AxisX.Minimum + numberOfPointsInChart;
             }
 
             // Redraw chart
-            m_LVGChart.Invalidate();
+            chart.Invalidate();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -114,7 +117,7 @@ namespace AutoMode
         private string ConvertToTorr(string value)
         {            
             double voltage = Convert.ToInt32(value,16) * 0.005;
-            return Math.Round(Math.Pow(10, voltage - 5.625), 2).ToString("E00");
+            return Math.Round(Math.Pow(10, voltage - 5.625), 2).ToString("0.00E+00");
         }
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
@@ -156,7 +159,7 @@ namespace AutoMode
         private void btnManual_Click(object sender, EventArgs e)
         {
             m_PLCInterface.PLCWriteBit_M("M2001", 1, true);
-        }      
+        }
      
     }
 }
