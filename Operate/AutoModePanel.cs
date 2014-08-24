@@ -157,16 +157,23 @@ namespace AutoMode
             bAuto = !bAuto;
 
             if (bAuto)
-                button1.Text = "AUTO";
+            {
+                btnAuto.BackColor = Color.Green;
+                btnAuto.Enabled = false;
+
+                btnManual.BackColor = Color.Red;
+                btnManual.Enabled = true;
+            }
             else
-                button1.Text = "MANUAL";
+            {
+                btnAuto.BackColor = Color.Red;
+                btnAuto.Enabled = true;
+
+                btnManual.BackColor = Color.Green;
+                btnManual.Enabled = false;
+            }
 
             m_PLCInterface.PLCWriteBit_M("M2000", 2, bAuto);
-        }
-
-        private void btnManual_Click(object sender, EventArgs e)
-        {
-            m_PLCInterface.PLCWriteBit_M("M2001", 1, true);
         }
     }
 }
