@@ -23,7 +23,13 @@ namespace ContrelModule
            public string m_WaitTime { get; set; }               // 報文等待
            public string m_RcvData { get; set; }                // Data
            public string m_CheckSum { get; set; }               // Checksum
+           public DATA_TYPE m_DataType { get; set; }            // 資料類型: M or D type
        }   
+
+       public enum DATA_TYPE
+       {
+           D_Type, M_Type, Unknow_Type
+       };
 
        public enum CONTROL_CODE
        {
@@ -273,13 +279,11 @@ namespace ContrelModule
            cmd.Append(PC_NUMBER);
            cmd.Append("WR");
            cmd.Append("A");
-           cmd.Append("D1618");
-           cmd.Append("02");
-           //cmd.Append(count.ToString("01"));
+           cmd.Append("D1616"); // Read From D1616 ~ D1619
+           cmd.Append("04");
 
            string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           //m_SerialPort.Write(cmd.ToString());
+           cmd.Append(checksum);           
            PLCSndData = cmd.ToString();
        }
 
@@ -304,12 +308,9 @@ namespace ContrelModule
                int value2 = (bOn) ? 0 : 1;
                cmd.Append(value2.ToString());
            }
-           
-           //cmd.Append(count.ToString("01"));
-
+                    
            string checksum = CheckSum(cmd);
-           cmd.Append(checksum);
-           //m_SerialPort.Write(cmd.ToString());
+           cmd.Append(checksum);           
            PLCSndData = cmd.ToString();
        }
 
@@ -323,13 +324,11 @@ namespace ContrelModule
            cmd.Append(PC_NUMBER);
            cmd.Append("BR");
            cmd.Append("A");
-           cmd.Append("M0010");
-           cmd.Append("05");          
-           //cmd.Append(count.ToString("01"));
-
+           cmd.Append("M2120");  // Read M from M2120 ~ M2126
+           cmd.Append("07");          
+         
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);
-           //m_SerialPort.Write(cmd.ToString());
            PLCSndData = cmd.ToString();
        }
          
@@ -361,7 +360,26 @@ namespace ContrelModule
            Array.Copy(rcvData, iOffset, tmpdata, 0, tmpdata.Length);
            data.m_RcvData = Encoding.Default.GetString(tmpdata);
 
+           // check which type of 
+           int iIdx = iOffset;
+           for( ;iIdx < rcvData.Length; ++iIdx)
+               if( rcvData[iIdx] == (byte)CONTROL_CODE.ETX )
+                   break;
 
+           int dataLength = iIdx - iOffset + 1;
+           switch(dataLength)
+           {
+               case 16:     // This is Read D type from PLC : D1616 ~ D1619(一共 4*4 = 16 byte)
+                   data.m_DataType = DATA_TYPE.D_Type;
+                   break;
+
+               case 7:      // This is Read M type from PLC : M2120 ~ M2126(一共 7*1 = 7 byte)
+                   data.m_DataType = DATA_TYPE.M_Type;
+                   break;
+
+               default:
+                   return null;  // Unknown Type                   
+           }
            return data;
        }      
 

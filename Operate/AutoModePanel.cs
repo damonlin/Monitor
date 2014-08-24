@@ -52,30 +52,38 @@ namespace AutoMode
 
         private void plcTimer_Tick(object sender, EventArgs e)
         {
+            labelLVG.Text = ConvertToTorr("05FF");  // D1618
+
             m_PLCInterface.PLCReadWord_D();
             Thread.Sleep(100);
+            m_PLCInterface.PLCReadBit_M();
            
             CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
-            if (data != null)
+            if (data != null )
             {
-                labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(0, 4));
-                labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(4, 4));              
-            }
+                if (data.m_DataType == CPLCInterface.DATA_TYPE.D_Type)
+                {
+                    labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(8, 4));  // D1618
+                    labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619             
+                }
+                else if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
+                {
+                    bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
+                    if (bRVON)
+                        btnRVSwitch.BackColor = Color.Green;
+                    else
+                        btnRVSwitch.BackColor = Color.Red;
 
-            m_PLCInterface.PLCReadBit_M();
+                    bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
+                    if (bVVON)
+                        btnVVSwitch.BackColor = Color.Green;
+                    else
+                        btnVVSwitch.BackColor = Color.Red;
+                }
+            }                       
 
             ProcessChart(m_LVGChart);
-            ProcessChart(m_HVGChart);
-
-            if (bRVON)
-                btnRVSwitch.BackColor = Color.Green;
-            else
-                btnRVSwitch.BackColor = Color.Red;
-
-            if (bVVON)
-                btnVVSwitch.BackColor = Color.Green;
-            else
-                btnVVSwitch.BackColor = Color.Red;
+            ProcessChart(m_HVGChart);            
         }
 
         private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart )
