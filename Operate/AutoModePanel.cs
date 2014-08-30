@@ -1,5 +1,3 @@
-#define PLC_ON
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -138,18 +136,18 @@ namespace AutoMode
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
         {
-            ConfirmDialog dlg = new ConfirmDialog(bRVON);
-            DialogResult retval = dlg.ShowDialog();
-            bRVON = dlg.ON;
-            m_PLCInterface.PLCWriteBit_M("M2020", 2, bRVON);
+            //ConfirmDialog dlg = new ConfirmDialog(bRVON);
+            //DialogResult retval = dlg.ShowDialog();
+            //bRVON = dlg.ON;
+            //m_PLCInterface.PLCWriteBit_M("M2020", 2, bRVON);
         }
 
         private void btnVVSwitch_Click(object sender, EventArgs e)
         {
-            ConfirmDialog dlg = new ConfirmDialog(bVVON);
-            DialogResult retval = dlg.ShowDialog();
-            bVVON = dlg.ON;
-            m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
+            //ConfirmDialog dlg = new ConfirmDialog(bVVON);
+            //DialogResult retval = dlg.ShowDialog();
+            //bVVON = dlg.ON;
+            //m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
         }
 
         private void btnAuto_Click(object sender, EventArgs e)

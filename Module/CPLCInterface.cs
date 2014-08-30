@@ -1,4 +1,4 @@
-﻿//#define PLC_ON
+﻿#define PLC_ON
 
 using System;
 using System.Collections.Concurrent;
@@ -384,12 +384,12 @@ namespace ContrelModule
        }      
 
        public void DoReceive()
-       {
+       {           
            //Byte[] buffer = new Byte[1024];
            while ( m_bReceiving )
            {
 #if PLC_ON
-               if ( m_SerialPort.BytesToRead > 0 )
+               if (m_SerialPort.IsOpen && m_SerialPort.BytesToRead > 0)
                {                   
                    //Int32 length = m_SerialPort.Read(buffer, 0, buffer.Length);
                    //Array.Resize(ref buffer, length);
@@ -405,13 +405,14 @@ namespace ContrelModule
        }
 
        public void DoSend()
-       {           
-           while ( m_bSending )
+       {
+           while (m_bSending)
            {
-               if ( m_PLCSndQueue.Count > 0 )
+#if PLC_ON
+               if (m_SerialPort.IsOpen && m_PLCSndQueue.Count > 0)
                {
                    string data = PLCSndData;
-#if PLC_ON
+
                    m_SerialPort.Write(data);
 #endif
                }           
@@ -434,7 +435,7 @@ namespace ContrelModule
            m_plcRcvThread.Start();
 
            // For Recive Thread
-           m_bReceiving = true;
+           m_bSending = true;
            m_plcSndThread = new Thread( DoSend);
            m_plcSndThread.IsBackground = true;
            m_plcSndThread.Start();                
