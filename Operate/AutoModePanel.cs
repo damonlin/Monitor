@@ -50,12 +50,12 @@ namespace AutoMode
 
         private void plcTimer_Tick(object sender, EventArgs e)
         {
-            m_PLCInterface.PLCReadWord_D();
-
-            Thread.Sleep(100);
+            //m_PLCInterface.PLCReadWord_D();
+            //Thread.Sleep(200);
+            
             m_PLCInterface.PLCReadBit_M();
 
-            Thread.Sleep(100);
+            //Thread.Sleep(100);
 
             CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
             if (data != null )
@@ -65,38 +65,38 @@ namespace AutoMode
                     labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(8, 4));  // D1618
                     labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619             
                 }
-                else if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
-                {
-                    bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
-                    if (bRVON)
-                        btnRVSwitch.BackColor = Color.Green;
-                    else
-                        btnRVSwitch.BackColor = Color.Red;
+                //else if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
+                //{
+                //    bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
+                //    if (bRVON)
+                //        btnRVSwitch.BackColor = Color.Green;
+                //    else
+                //        btnRVSwitch.BackColor = Color.Red;
 
-                    bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
-                    if (bVVON)
-                        btnVVSwitch.BackColor = Color.Green;
-                    else
-                        btnVVSwitch.BackColor = Color.Red;
+                //    bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
+                //    if (bVVON)
+                //        btnVVSwitch.BackColor = Color.Green;
+                //    else
+                //        btnVVSwitch.BackColor = Color.Red;
 
-                    bAuto = data.m_RcvData[3] == '1' ? true : false; // M2123
-                    if (bAuto)
-                    {
-                        btnAuto.BackColor = Color.Green;
-                        btnAuto.Enabled = false;
+                //    bAuto = data.m_RcvData[4] == '1' ? true : false; // M2123
+                //    if (bAuto)
+                //    {
+                //        btnAuto.BackColor = Color.Green;
+                //        btnAuto.Enabled = false;
 
-                        btnManual.BackColor = Color.Red;
-                        btnManual.Enabled = true;
-                    }
-                    else
-                    {
-                        btnAuto.BackColor = Color.Red;
-                        btnAuto.Enabled = true;
+                //        btnManual.BackColor = Color.Red;
+                //        btnManual.Enabled = true;
+                //    }
+                //    else
+                //    {
+                //        btnAuto.BackColor = Color.Red;
+                //        btnAuto.Enabled = true;
 
-                        btnManual.BackColor = Color.Green;
-                        btnManual.Enabled = false;
-                    }
-                }
+                //        btnManual.BackColor = Color.Green;
+                //        btnManual.Enabled = false;
+                //    }
+                //}
             }
 
             ProcessChart(m_LVGChart, labelLVG.Text);
@@ -155,6 +155,12 @@ namespace AutoMode
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
         {
+            if (bAuto)
+            {
+                MessageBox.Show("叫ち传 Manual 家Α");
+                return;
+            }
+
             ConfirmDialog dlg = new ConfirmDialog(bRVON);
             DialogResult retval = dlg.ShowDialog();
             bRVON = dlg.ON;
@@ -163,6 +169,12 @@ namespace AutoMode
 
         private void btnVVSwitch_Click(object sender, EventArgs e)
         {
+            if (bAuto)
+            {
+                MessageBox.Show("叫ち传 Manual 家Α");
+                return;
+            }
+
             ConfirmDialog dlg = new ConfirmDialog(bVVON);
             DialogResult retval = dlg.ShowDialog();
             bVVON = dlg.ON;
@@ -195,7 +207,44 @@ namespace AutoMode
 
         private void timer1_Tick(object sender, EventArgs e)
         {
- 
+            m_PLCInterface.PLCReadWord_D();
+
+            CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
+            if (data == null)
+                return;
+
+            if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
+            {
+                bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
+                if (bRVON)
+                    btnRVSwitch.BackColor = Color.Green;
+                else
+                    btnRVSwitch.BackColor = Color.Red;
+
+                bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
+                if (bVVON)
+                    btnVVSwitch.BackColor = Color.Green;
+                else
+                    btnVVSwitch.BackColor = Color.Red;
+
+                bAuto = data.m_RcvData[4] == '1' ? true : false; // M2123
+                if (bAuto)
+                {
+                    btnAuto.BackColor = Color.Green;
+                    btnAuto.Enabled = false;
+
+                    btnManual.BackColor = Color.Red;
+                    btnManual.Enabled = true;
+                }
+                else
+                {
+                    btnAuto.BackColor = Color.Red;
+                    btnAuto.Enabled = true;
+
+                    btnManual.BackColor = Color.Green;
+                    btnManual.Enabled = false;
+                }
+            }
         }
     }
 }

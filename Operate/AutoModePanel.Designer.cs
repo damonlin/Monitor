@@ -636,6 +636,7 @@
             // 
             chartArea4.AxisX.LabelStyle.Format = "HH:mm:ss";
             chartArea4.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea4.AxisY.Maximum = 1200D;
             chartArea4.Name = "Default";
             chartArea4.Position.Auto = false;
             chartArea4.Position.Height = 94F;
@@ -715,7 +716,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AutoModePanel
