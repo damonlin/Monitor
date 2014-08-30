@@ -369,11 +369,11 @@ namespace ContrelModule
            int dataLength = iIdx - iOffset + 1;
            switch(dataLength)
            {
-               case 16:     // This is Read D type from PLC : D1616 ~ D1619(一共 4*4 = 16 byte)
+               case 17:     // This is Read D type from PLC : D1616 ~ D1619(一共 4*4 = 16 byte)
                    data.m_DataType = DATA_TYPE.D_Type;
                    break;
 
-               case 7:      // This is Read M type from PLC : M2120 ~ M2126(一共 7*1 = 7 byte)
+               case 8:      // This is Read M type from PLC : M2120 ~ M2128(一共 9*1 = 9 byte)
                    data.m_DataType = DATA_TYPE.M_Type;
                    break;
 

@@ -50,12 +50,13 @@ namespace AutoMode
 
         private void plcTimer_Tick(object sender, EventArgs e)
         {
-            labelLVG.Text = ConvertToTorr("05FF");  // D1618
-
             m_PLCInterface.PLCReadWord_D();
+
             Thread.Sleep(100);
             m_PLCInterface.PLCReadBit_M();
-           
+
+            Thread.Sleep(100);
+
             CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
             if (data != null )
             {
@@ -77,25 +78,43 @@ namespace AutoMode
                         btnVVSwitch.BackColor = Color.Green;
                     else
                         btnVVSwitch.BackColor = Color.Red;
-                }
-            }                       
 
-            ProcessChart(m_LVGChart);
-            ProcessChart(m_HVGChart);            
+                    bAuto = data.m_RcvData[3] == '1' ? true : false; // M2123
+                    if (bAuto)
+                    {
+                        btnAuto.BackColor = Color.Green;
+                        btnAuto.Enabled = false;
+
+                        btnManual.BackColor = Color.Red;
+                        btnManual.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAuto.BackColor = Color.Red;
+                        btnAuto.Enabled = true;
+
+                        btnManual.BackColor = Color.Green;
+                        btnManual.Enabled = false;
+                    }
+                }
+            }
+
+            ProcessChart(m_LVGChart, labelLVG.Text);
+            ProcessChart(m_HVGChart, labelHVG.Text);            
         }
 
-        private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart )
+        private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, string value )
         {
             int numberOfPointsInChart = 7;
             int numberOfPointsAfterRemoval = 7;
 
-            int newX = pointIndex + 1;
-            int newY = random.Next(600, 700);
+            //int newX = pointIndex + 1;
+            //int newY = random.Next(600, 700);
 
             DateTime now = DateTime.Now;
 
-            string temp = ConvertToTorr(newY.ToString());
-            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), ConvertToTorr(newY.ToString()));      
+            //string temp = ConvertToTorr(value);
+            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
             ++pointIndex;
 
             chart.ResetAutoValues();
@@ -136,18 +155,18 @@ namespace AutoMode
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
         {
-            //ConfirmDialog dlg = new ConfirmDialog(bRVON);
-            //DialogResult retval = dlg.ShowDialog();
-            //bRVON = dlg.ON;
-            //m_PLCInterface.PLCWriteBit_M("M2020", 2, bRVON);
+            ConfirmDialog dlg = new ConfirmDialog(bRVON);
+            DialogResult retval = dlg.ShowDialog();
+            bRVON = dlg.ON;
+            m_PLCInterface.PLCWriteBit_M("M2020", 2, bRVON);
         }
 
         private void btnVVSwitch_Click(object sender, EventArgs e)
         {
-            //ConfirmDialog dlg = new ConfirmDialog(bVVON);
-            //DialogResult retval = dlg.ShowDialog();
-            //bVVON = dlg.ON;
-            //m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
+            ConfirmDialog dlg = new ConfirmDialog(bVVON);
+            DialogResult retval = dlg.ShowDialog();
+            bVVON = dlg.ON;
+            m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
         }
 
         private void btnAuto_Click(object sender, EventArgs e)
@@ -172,6 +191,11 @@ namespace AutoMode
             }
 
             m_PLCInterface.PLCWriteBit_M("M2000", 2, bAuto);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+ 
         }
     }
 }
