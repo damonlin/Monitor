@@ -72,6 +72,10 @@
             this.labelHVG = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelPumping = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelCycle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -122,7 +126,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 544F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 555F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1274, 954);
             this.tableLayoutPanel3.TabIndex = 0;
@@ -131,20 +135,24 @@
             // 
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 413);
+            this.panel2.Location = new System.Drawing.Point(3, 402);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1268, 538);
+            this.panel2.Size = new System.Drawing.Size(1268, 549);
             this.panel2.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelCycle);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.labelPumping);
             this.groupBox2.Controls.Add(this.btnRVSwitch);
             this.groupBox2.Controls.Add(this.btnVVSwitch);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1268, 538);
+            this.groupBox2.Size = new System.Drawing.Size(1268, 549);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
@@ -152,7 +160,7 @@
             // 
             this.btnRVSwitch.BackColor = System.Drawing.Color.Red;
             this.btnRVSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRVSwitch.Location = new System.Drawing.Point(498, 65);
+            this.btnRVSwitch.Location = new System.Drawing.Point(328, 83);
             this.btnRVSwitch.Name = "btnRVSwitch";
             this.btnRVSwitch.Size = new System.Drawing.Size(26, 23);
             this.btnRVSwitch.TabIndex = 43;
@@ -163,7 +171,7 @@
             // 
             this.btnVVSwitch.BackColor = System.Drawing.Color.Red;
             this.btnVVSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVVSwitch.Location = new System.Drawing.Point(294, 74);
+            this.btnVVSwitch.Location = new System.Drawing.Point(184, 92);
             this.btnVVSwitch.Name = "btnVVSwitch";
             this.btnVVSwitch.Size = new System.Drawing.Size(26, 23);
             this.btnVVSwitch.TabIndex = 42;
@@ -176,7 +184,7 @@
             this.pictureBox1.Image = global::AutoMode.Properties.Resources.圖控頁面1;
             this.pictureBox1.Location = new System.Drawing.Point(3, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1262, 517);
+            this.pictureBox1.Size = new System.Drawing.Size(1262, 528);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
@@ -193,7 +201,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1268, 404);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1268, 393);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // groupBox3
@@ -203,7 +211,7 @@
             this.groupBox3.Location = new System.Drawing.Point(822, 2);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(444, 400);
+            this.groupBox3.Size = new System.Drawing.Size(444, 389);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Auto Mode";
@@ -220,7 +228,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(438, 379);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(438, 368);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // btnManual
@@ -230,7 +238,7 @@
             this.btnManual.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManual.Location = new System.Drawing.Point(222, 3);
             this.btnManual.Name = "btnManual";
-            this.btnManual.Size = new System.Drawing.Size(213, 373);
+            this.btnManual.Size = new System.Drawing.Size(213, 362);
             this.btnManual.TabIndex = 54;
             this.btnManual.Text = "Manual";
             this.btnManual.UseVisualStyleBackColor = true;
@@ -243,7 +251,7 @@
             this.btnAuto.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuto.Location = new System.Drawing.Point(3, 3);
             this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(213, 373);
+            this.btnAuto.Size = new System.Drawing.Size(213, 362);
             this.btnAuto.TabIndex = 53;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
@@ -257,7 +265,7 @@
             this.groupBox4.Location = new System.Drawing.Point(1, 1);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(818, 402);
+            this.groupBox4.Size = new System.Drawing.Size(818, 391);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Information";
@@ -274,7 +282,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(812, 381);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(812, 370);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label1
@@ -284,7 +292,7 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(806, 190);
+            this.label1.Size = new System.Drawing.Size(806, 185);
             this.label1.TabIndex = 52;
             this.label1.Text = "PUMP QC Monitor System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -297,11 +305,11 @@
             this.tableLayoutPanel6.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 193);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 188);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(806, 185);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(806, 179);
             this.tableLayoutPanel6.TabIndex = 53;
             // 
             // textBox1
@@ -321,7 +329,7 @@
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(397, 185);
+            this.label8.Size = new System.Drawing.Size(397, 179);
             this.label8.TabIndex = 45;
             this.label8.Text = "S/N ID:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -543,8 +551,11 @@
             // 
             // m_HVGChart
             // 
+            chartArea3.AxisX.LabelAutoFitMaxFontSize = 7;
             chartArea3.AxisX.LabelStyle.Format = "HH:mm:ss";
             chartArea3.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea3.AxisY.Maximum = 1200D;
+            chartArea3.AxisY.Minimum = 0.001D;
             chartArea3.Name = "Default";
             chartArea3.Position.Auto = false;
             chartArea3.Position.Height = 94F;
@@ -557,6 +568,7 @@
             this.m_HVGChart.Name = "m_HVGChart";
             series3.ChartArea = "Default";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.IsVisibleInLegend = false;
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.m_HVGChart.Series.Add(series3);
@@ -634,6 +646,7 @@
             // 
             // m_LVGChart
             // 
+            chartArea4.AxisX.LabelAutoFitMaxFontSize = 7;
             chartArea4.AxisX.LabelStyle.Format = "HH:mm:ss";
             chartArea4.AxisY.LabelStyle.Format = "0.00E+00";
             chartArea4.AxisY.Maximum = 1200D;
@@ -649,6 +662,7 @@
             this.m_LVGChart.Name = "m_LVGChart";
             series4.ChartArea = "Default";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.IsVisibleInLegend = false;
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.m_LVGChart.Series.Add(series4);
@@ -719,6 +733,46 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelPumping
+            // 
+            this.labelPumping.AutoSize = true;
+            this.labelPumping.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPumping.Location = new System.Drawing.Point(212, 24);
+            this.labelPumping.Name = "labelPumping";
+            this.labelPumping.Size = new System.Drawing.Size(25, 25);
+            this.labelPumping.TabIndex = 44;
+            this.labelPumping.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(9, 23);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 25);
+            this.label15.TabIndex = 45;
+            this.label15.Text = "Pumping Speed:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(9, 55);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(170, 25);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Cycle Counter:";
+            // 
+            // labelCycle
+            // 
+            this.labelCycle.AutoSize = true;
+            this.labelCycle.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCycle.Location = new System.Drawing.Point(212, 55);
+            this.labelCycle.Name = "labelCycle";
+            this.labelCycle.Size = new System.Drawing.Size(25, 25);
+            this.labelCycle.TabIndex = 47;
+            this.labelCycle.Text = "0";
+            // 
             // AutoModePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -732,6 +786,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -807,6 +862,10 @@
         private System.Windows.Forms.Button btnManual;
         private System.Windows.Forms.Button btnAuto;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelPumping;
+        private System.Windows.Forms.Label labelCycle;
+        private System.Windows.Forms.Label label14;
 
 
 

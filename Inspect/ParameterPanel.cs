@@ -107,11 +107,11 @@ namespace Parameter
             Thread.Sleep(500);
             value.Clear();
 
-            double dwTmp = (5.625 + Math.Log(Convert.ToInt32(D0209.Text)) / Math.Log(10)) / 0.005;
+            double dwTmp = (5.625 + Math.Log(Convert.ToDouble(D0209.Text)) / Math.Log(10)) / 0.005;
             val = (int)Math.Round(dwTmp, 0);
             value.Append(String.Format("{0:X4}", val));
 
-            dwTmp = (5.625 + Math.Log(Convert.ToInt32(D0210.Text)) / Math.Log(10)) / 0.005;
+            dwTmp = (5.625 + Math.Log(Convert.ToDouble(D0210.Text)) / Math.Log(10)) / 0.005;
             val = (int)Math.Round(dwTmp, 0);
             value.Append(String.Format("{0:X4}", val));
 #if PLC_ON

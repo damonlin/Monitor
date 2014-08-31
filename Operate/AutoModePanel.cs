@@ -50,55 +50,44 @@ namespace AutoMode
 
         private void plcTimer_Tick(object sender, EventArgs e)
         {
-            //m_PLCInterface.PLCReadWord_D();
-            //Thread.Sleep(200);
-            
-            m_PLCInterface.PLCReadBit_M();
-
-            //Thread.Sleep(100);
+            m_PLCInterface.PLCReadWord_D();
 
             CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
             if (data != null )
             {
-                if (data.m_DataType == CPLCInterface.DATA_TYPE.D_Type)
+                if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
                 {
-                    labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(8, 4));  // D1618
-                    labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619             
-                }
-                //else if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
-                //{
-                //    bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
-                //    if (bRVON)
-                //        btnRVSwitch.BackColor = Color.Green;
-                //    else
-                //        btnRVSwitch.BackColor = Color.Red;
+                    bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
+                    if (bRVON)
+                        btnRVSwitch.BackColor = Color.Green;
+                    else
+                        btnRVSwitch.BackColor = Color.Red;
 
-                //    bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
-                //    if (bVVON)
-                //        btnVVSwitch.BackColor = Color.Green;
-                //    else
-                //        btnVVSwitch.BackColor = Color.Red;
+                    bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
+                    if (bVVON)
+                        btnVVSwitch.BackColor = Color.Green;
+                    else
+                        btnVVSwitch.BackColor = Color.Red;
 
-                //    bAuto = data.m_RcvData[4] == '1' ? true : false; // M2123
-                //    if (bAuto)
-                //    {
-                //        btnAuto.BackColor = Color.Green;
-                //        btnAuto.Enabled = false;
+                    bAuto = data.m_RcvData[4] == '1' ? true : false; // M2123
+                    if (bAuto)
+                    {
+                        btnAuto.BackColor = Color.Green;
+                        btnAuto.Enabled = false;
 
-                //        btnManual.BackColor = Color.Red;
-                //        btnManual.Enabled = true;
-                //    }
-                //    else
-                //    {
-                //        btnAuto.BackColor = Color.Red;
-                //        btnAuto.Enabled = true;
+                        btnManual.BackColor = Color.Red;
+                        btnManual.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAuto.BackColor = Color.Red;
+                        btnAuto.Enabled = true;
 
-                //        btnManual.BackColor = Color.Green;
-                //        btnManual.Enabled = false;
-                //    }
-                //}
+                        btnManual.BackColor = Color.Green;
+                        btnManual.Enabled = false;
+                    }
+                }         
             }
-
             ProcessChart(m_LVGChart, labelLVG.Text);
             ProcessChart(m_HVGChart, labelHVG.Text);            
         }
@@ -150,7 +139,7 @@ namespace AutoMode
         private string ConvertToTorr(string value)
         {            
             double voltage = Convert.ToInt32(value,16) * 0.005;
-            return Math.Round(Math.Pow(10, voltage - 5.625), 2).ToString("0.00E+00");
+            return Math.Round(Math.Pow(10, voltage - 5.625), 3).ToString("E2");
         }
       
         private void btnRVSwitch_Click(object sender, EventArgs e)
@@ -207,44 +196,24 @@ namespace AutoMode
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            m_PLCInterface.PLCReadWord_D();
+            //m_PLCInterface.PLCReadWord_D();
+            m_PLCInterface.PLCReadBit_M();
 
             CPLCInterface.PLCData data = m_PLCInterface.PLCRcvData;
             if (data == null)
                 return;
-
-            if (data.m_DataType == CPLCInterface.DATA_TYPE.M_Type)
-            {
-                bRVON = data.m_RcvData[0] == '1' ? false : true; // M2120
-                if (bRVON)
-                    btnRVSwitch.BackColor = Color.Green;
-                else
-                    btnRVSwitch.BackColor = Color.Red;
-
-                bVVON = data.m_RcvData[2] == '1' ? false : true; // M2122
-                if (bVVON)
-                    btnVVSwitch.BackColor = Color.Green;
-                else
-                    btnVVSwitch.BackColor = Color.Red;
-
-                bAuto = data.m_RcvData[4] == '1' ? true : false; // M2123
-                if (bAuto)
+            
+            if (data.m_DataType == CPLCInterface.DATA_TYPE.D_Type)
                 {
-                    btnAuto.BackColor = Color.Green;
-                    btnAuto.Enabled = false;
+                    int aa = Convert.ToInt32(data.m_RcvData.Substring(0, 4), 16);
+                    double tmp = (double)aa / 10.0; // D1616
+                    labelPumping.Text = tmp.ToString("0.0");
 
-                    btnManual.BackColor = Color.Red;
-                    btnManual.Enabled = true;
-                }
-                else
-                {
-                    btnAuto.BackColor = Color.Red;
-                    btnAuto.Enabled = true;
+                    labelCycle.Text = Convert.ToInt32(data.m_RcvData.Substring(4, 4), 16).ToString(); // D1617
 
-                    btnManual.BackColor = Color.Green;
-                    btnManual.Enabled = false;
+                    labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(8, 4));  // D1618
+                    labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619             
                 }
-            }
         }
     }
 }
