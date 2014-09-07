@@ -247,5 +247,5 @@ namespace Monitor
             Thread.Sleep(50);
             bitmap.Save(path + fileName, ImageFormat.Jpeg);                       
         }        
-    }
+    } 
 }

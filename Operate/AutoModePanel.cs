@@ -10,6 +10,7 @@ using Common.Template;
 using ContrelModule;
 using System.IO.Ports;
 using System.Threading;
+using System.IO;
 
 namespace AutoMode
 {
@@ -98,12 +99,24 @@ namespace AutoMode
             int numberOfPointsAfterRemoval = 7;
 
             //int newX = pointIndex + 1;
-            //int newY = random.Next(600, 700);
-
+            int newY = random.Next(600, 700);
+            
             DateTime now = DateTime.Now;
+            //chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
+            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), newY.ToString());
 
-            //string temp = ConvertToTorr(value);
-            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
+            string path = System.Environment.CurrentDirectory + "\\History\\" + chart.Text + "\\";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            string fileName = DateTime.Now.ToString("yyyy_MM_dd") + ".txt";
+            FileStream myFile = File.Open(path + fileName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
+            StreamWriter myWriter = new StreamWriter(myFile);
+            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + newY.ToString());
+
+            myWriter.Dispose();
+            myFile.Dispose();
+
             ++pointIndex;
 
             chart.ResetAutoValues();

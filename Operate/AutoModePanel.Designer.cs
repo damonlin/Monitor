@@ -452,7 +452,7 @@
             this.chart2.Series.Add(series1);
             this.chart2.Size = new System.Drawing.Size(427, 139);
             this.chart2.TabIndex = 14;
-            this.chart2.Text = "chart2";
+            this.chart2.Text = "Watt";
             // 
             // tableLayoutPanel10
             // 
@@ -481,7 +481,6 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 62);
             this.label11.TabIndex = 40;
-            this.label11.Text = "Torr";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
@@ -531,7 +530,7 @@
             this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(427, 138);
             this.chart1.TabIndex = 12;
-            this.chart1.Text = "chart1";
+            this.chart1.Text = "Current";
             // 
             // tableLayoutPanel9
             // 
@@ -560,7 +559,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 62);
             this.label7.TabIndex = 40;
-            this.label7.Text = "Torr";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -614,7 +612,7 @@
             this.m_HVGChart.Series.Add(series3);
             this.m_HVGChart.Size = new System.Drawing.Size(427, 138);
             this.m_HVGChart.TabIndex = 6;
-            this.m_HVGChart.Text = "chart1";
+            this.m_HVGChart.Text = "HVG";
             // 
             // label2
             // 
@@ -708,7 +706,7 @@
             this.m_LVGChart.Series.Add(series4);
             this.m_LVGChart.Size = new System.Drawing.Size(427, 138);
             this.m_LVGChart.TabIndex = 2;
-            this.m_LVGChart.Text = "chart1";
+            this.m_LVGChart.Text = "LVG";
             // 
             // tableLayoutPanel8
             // 

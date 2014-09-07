@@ -1,4 +1,5 @@
-﻿#define PLC_ON
+﻿
+#define PLC_ON
 
 using System;
 using System.Collections.Concurrent;
@@ -399,8 +400,9 @@ namespace ContrelModule
                    if (data != null )
                        m_PLCRcvQueue.Enqueue(data);
                }
-               Thread.Sleep(16);
 #endif
+               Thread.Sleep(16);
+
            }
        }
 
@@ -422,9 +424,7 @@ namespace ContrelModule
 
        #endregion
 
-       #region Private Method
-
-      
+       #region Private Method      
 
        private void CreateThreads()
        {
