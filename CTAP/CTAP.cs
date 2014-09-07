@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
@@ -229,6 +230,22 @@ namespace Monitor
            //         navigationHashtable[szNavigationString].Enabled = true;
             //    }
             //}
+        }
+
+        private void PrintScreen_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
+                                    Screen.PrimaryScreen.Bounds.Height);
+            Graphics graphics = Graphics.FromImage(bitmap as Image);
+            graphics.CopyFromScreen(0, 0, 0, 0, bitmap.Size);
+
+            string fileName = DateTime.Now.ToString("yyyy_MM_dd_hh_mm_ss") + ".jpg";
+            string path = System.Environment.CurrentDirectory + "\\PrintScreen\\";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            Thread.Sleep(50);
+            bitmap.Save(path + fileName, ImageFormat.Jpeg);                       
         }        
     }
 }

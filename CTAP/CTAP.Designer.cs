@@ -52,7 +52,6 @@
             this.AlarmRadioButton = new System.Windows.Forms.RadioButton();
             this.HistoryChartRadioButton = new System.Windows.Forms.RadioButton();
             this.btnDecPanel = new System.Windows.Forms.Panel();
-            
             this.baseStatusStrip.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,7 +118,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(233)))), ((int)(((byte)(216)))));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;            
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.operatorIDButton);
             this.panel6.Controls.Add(this.pictureBox1);
@@ -220,7 +219,7 @@
             this.PrintScreenRadioButton.Name = "PrintScreenRadioButton";
             this.PrintScreenRadioButton.TabStop = true;
             this.PrintScreenRadioButton.UseVisualStyleBackColor = false;
-            this.PrintScreenRadioButton.CheckedChanged += new System.EventHandler(this.navigatorBtn_CheckedChanged);
+            this.PrintScreenRadioButton.Click += new System.EventHandler(this.PrintScreen_Click);
             // 
             // InstantChartRadioButton
             // 
@@ -260,7 +259,6 @@
             this.btnDecPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(217)))));
             resources.ApplyResources(this.btnDecPanel, "btnDecPanel");
             this.btnDecPanel.Name = "btnDecPanel";
-           
             // 
             // CTAP
             // 
