@@ -26,6 +26,12 @@ namespace AutoMode
         private bool bVVON = false;
         private bool bAuto = false;
 
+        private FileStream m_HVGFile = null;
+        private StreamWriter m_HVGWriter = null;
+
+        private FileStream m_LVGFile = null;
+        private StreamWriter m_LVGWriter = null;
+
         public AutoModePanel()
         {
             InitializeComponent();
@@ -99,7 +105,7 @@ namespace AutoMode
             int numberOfPointsAfterRemoval = 7;
 
             //int newX = pointIndex + 1;
-            int newY = random.Next(600, 700);
+            int newY = random.Next(100, 1000);
             
             DateTime now = DateTime.Now;
             //chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
@@ -110,10 +116,10 @@ namespace AutoMode
                 Directory.CreateDirectory(path);
 
             string fileName = DateTime.Now.ToString("yyyy_MM_dd") + ".txt";
+         
             FileStream myFile = File.Open(path + fileName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
             StreamWriter myWriter = new StreamWriter(myFile);
             myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + newY.ToString());
-
             myWriter.Dispose();
             myFile.Dispose();
 

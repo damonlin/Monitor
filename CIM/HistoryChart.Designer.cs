@@ -15,9 +15,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.m_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,19 +39,20 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnFirst = new System.Windows.Forms.Button();
-            this.btnLast100 = new System.Windows.Forms.Button();
+            this.btnFirstPage = new System.Windows.Forms.Button();
+            this.btnLast5Page = new System.Windows.Forms.Button();
             this.btnLast25 = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
-            this.btnNext100 = new System.Windows.Forms.Button();
-            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNext5Page = new System.Windows.Forms.Button();
+            this.btnLastPage = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnScaleLarge = new System.Windows.Forms.Button();
+            this.btnScaleSmall = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPaint = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_Chart)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,8 +72,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.59102F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.40898F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.43545F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.56455F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.m_Chart, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
@@ -92,7 +95,7 @@
             chartArea1.AxisY.LabelStyle.Interval = 100D;
             chartArea1.AxisY.LineColor = System.Drawing.Color.DarkRed;
             chartArea1.AxisY.Maximum = 1200D;
-            chartArea1.AxisY.Minimum = 0.001D;
+            chartArea1.AxisY.Minimum = 0D;
             chartArea1.Name = "Default";
             chartArea1.Position.Auto = false;
             chartArea1.Position.Height = 94F;
@@ -102,15 +105,20 @@
             this.m_Chart.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.m_Chart.Legends.Add(legend1);
-            this.m_Chart.Location = new System.Drawing.Point(372, 3);
+            this.m_Chart.Location = new System.Drawing.Point(395, 3);
             this.m_Chart.Name = "m_Chart";
             series1.ChartArea = "Default";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series2.ChartArea = "Default";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
             this.m_Chart.Series.Add(series1);
-            this.m_Chart.Size = new System.Drawing.Size(872, 643);
+            this.m_Chart.Series.Add(series2);
+            this.m_Chart.Size = new System.Drawing.Size(849, 643);
             this.m_Chart.TabIndex = 7;
             this.m_Chart.Text = "HVG";
             // 
@@ -120,7 +128,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 643);
+            this.groupBox1.Size = new System.Drawing.Size(386, 643);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Condition";
@@ -128,7 +136,7 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.chkScientific, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 2);
@@ -140,14 +148,14 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.27273F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.72727F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 136F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(357, 622);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.9247F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.9247F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.26302F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.47189F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.47189F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.47189F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.47189F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(380, 622);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -156,7 +164,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.03448F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.96552F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel3.Controls.Add(this.dateTimePickerEnd, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
@@ -171,7 +179,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(351, 57);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(374, 80);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // dateTimePickerEnd
@@ -179,9 +187,9 @@
             this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(69, 31);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(74, 43);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(141, 37);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(152, 37);
             this.dateTimePickerEnd.TabIndex = 9;
             // 
             // label1
@@ -191,7 +199,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 28);
+            this.label1.Size = new System.Drawing.Size(65, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Start";
             // 
@@ -199,16 +207,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 28);
+            this.label2.Location = new System.Drawing.Point(3, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 29);
+            this.label2.Size = new System.Drawing.Size(65, 40);
             this.label2.TabIndex = 1;
             this.label2.Text = "End";
             // 
             // numberStartHour
             // 
             this.numberStartHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numberStartHour.Location = new System.Drawing.Point(216, 3);
+            this.numberStartHour.Location = new System.Drawing.Point(232, 3);
             this.numberStartHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -221,7 +229,7 @@
             // 
             // numberEndHour
             // 
-            this.numberEndHour.Location = new System.Drawing.Point(216, 31);
+            this.numberEndHour.Location = new System.Drawing.Point(232, 43);
             this.numberEndHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -234,7 +242,7 @@
             // 
             // numberStartMin
             // 
-            this.numberStartMin.Location = new System.Drawing.Point(289, 3);
+            this.numberStartMin.Location = new System.Drawing.Point(305, 3);
             this.numberStartMin.Maximum = new decimal(new int[] {
             60,
             0,
@@ -247,7 +255,7 @@
             // 
             // numberEndMin
             // 
-            this.numberEndMin.Location = new System.Drawing.Point(289, 31);
+            this.numberEndMin.Location = new System.Drawing.Point(305, 43);
             this.numberEndMin.Maximum = new decimal(new int[] {
             60,
             0,
@@ -263,18 +271,18 @@
             this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerStart.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStart.Location = new System.Drawing.Point(69, 3);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(74, 3);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(141, 37);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(152, 37);
             this.dateTimePickerStart.TabIndex = 8;
             // 
             // chkScientific
             // 
             this.chkScientific.AutoSize = true;
             this.chkScientific.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkScientific.Location = new System.Drawing.Point(3, 66);
+            this.chkScientific.Location = new System.Drawing.Point(3, 89);
             this.chkScientific.Name = "chkScientific";
-            this.chkScientific.Size = new System.Drawing.Size(351, 41);
+            this.chkScientific.Size = new System.Drawing.Size(374, 80);
             this.chkScientific.TabIndex = 1;
             this.chkScientific.Text = "Scientific Notation(科學符號)";
             this.chkScientific.UseVisualStyleBackColor = true;
@@ -288,11 +296,11 @@
             this.tableLayoutPanel4.Controls.Add(this.comboBox1, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnFilter, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 113);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 175);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(351, 40);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(374, 57);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // comboBox1
@@ -301,15 +309,15 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(3, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 37);
+            this.comboBox1.Size = new System.Drawing.Size(257, 37);
             this.comboBox1.TabIndex = 0;
             // 
             // btnFilter
             // 
             this.btnFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFilter.Location = new System.Drawing.Point(250, 3);
+            this.btnFilter.Location = new System.Drawing.Point(266, 3);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(98, 34);
+            this.btnFilter.Size = new System.Drawing.Size(105, 51);
             this.btnFilter.TabIndex = 1;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -318,44 +326,47 @@
             // 
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 203);
+            this.groupBox2.Location = new System.Drawing.Point(3, 334);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(351, 130);
+            this.groupBox2.Size = new System.Drawing.Size(374, 90);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnFirst);
-            this.flowLayoutPanel1.Controls.Add(this.btnLast100);
+            this.flowLayoutPanel1.Controls.Add(this.btnFirstPage);
+            this.flowLayoutPanel1.Controls.Add(this.btnLast5Page);
             this.flowLayoutPanel1.Controls.Add(this.btnLast25);
             this.flowLayoutPanel1.Controls.Add(this.btnNextPage);
-            this.flowLayoutPanel1.Controls.Add(this.btnNext100);
-            this.flowLayoutPanel1.Controls.Add(this.btnLast);
+            this.flowLayoutPanel1.Controls.Add(this.btnNext5Page);
+            this.flowLayoutPanel1.Controls.Add(this.btnLastPage);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 33);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(345, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(368, 54);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // btnFirst
+            // btnFirstPage
             // 
-            this.btnFirst.Location = new System.Drawing.Point(3, 3);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(77, 36);
-            this.btnFirst.TabIndex = 0;
-            this.btnFirst.Text = "|<";
-            this.btnFirst.UseVisualStyleBackColor = true;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            this.btnFirstPage.Location = new System.Drawing.Point(3, 3);
+            this.btnFirstPage.Name = "btnFirstPage";
+            this.btnFirstPage.Size = new System.Drawing.Size(77, 36);
+            this.btnFirstPage.TabIndex = 0;
+            this.btnFirstPage.Text = "|<";
+            this.toolTip1.SetToolTip(this.btnFirstPage, "第一頁");
+            this.btnFirstPage.UseVisualStyleBackColor = true;
+            this.btnFirstPage.Click += new System.EventHandler(this.btnFirstPage_Click);
             // 
-            // btnLast100
+            // btnLast5Page
             // 
-            this.btnLast100.Location = new System.Drawing.Point(86, 3);
-            this.btnLast100.Name = "btnLast100";
-            this.btnLast100.Size = new System.Drawing.Size(77, 36);
-            this.btnLast100.TabIndex = 1;
-            this.btnLast100.Text = "<<";
-            this.btnLast100.UseVisualStyleBackColor = true;
+            this.btnLast5Page.Location = new System.Drawing.Point(86, 3);
+            this.btnLast5Page.Name = "btnLast5Page";
+            this.btnLast5Page.Size = new System.Drawing.Size(77, 36);
+            this.btnLast5Page.TabIndex = 1;
+            this.btnLast5Page.Text = "<<";
+            this.toolTip1.SetToolTip(this.btnLast5Page, "上五頁");
+            this.btnLast5Page.UseVisualStyleBackColor = true;
+            this.btnLast5Page.Click += new System.EventHandler(this.btnLast5Page_Click);
             // 
             // btnLast25
             // 
@@ -364,7 +375,9 @@
             this.btnLast25.Size = new System.Drawing.Size(77, 36);
             this.btnLast25.TabIndex = 2;
             this.btnLast25.Text = "<";
+            this.toolTip1.SetToolTip(this.btnLast25, "上一頁");
             this.btnLast25.UseVisualStyleBackColor = true;
+            this.btnLast25.Click += new System.EventHandler(this.btnPrevioustPage_Click);
             // 
             // btnNextPage
             // 
@@ -373,36 +386,41 @@
             this.btnNextPage.Size = new System.Drawing.Size(77, 36);
             this.btnNextPage.TabIndex = 3;
             this.btnNextPage.Text = ">";
+            this.toolTip1.SetToolTip(this.btnNextPage, "下一頁");
             this.btnNextPage.UseVisualStyleBackColor = true;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
-            // btnNext100
+            // btnNext5Page
             // 
-            this.btnNext100.Location = new System.Drawing.Point(3, 45);
-            this.btnNext100.Name = "btnNext100";
-            this.btnNext100.Size = new System.Drawing.Size(77, 36);
-            this.btnNext100.TabIndex = 4;
-            this.btnNext100.Text = ">>";
-            this.btnNext100.UseVisualStyleBackColor = true;
+            this.btnNext5Page.Location = new System.Drawing.Point(3, 45);
+            this.btnNext5Page.Name = "btnNext5Page";
+            this.btnNext5Page.Size = new System.Drawing.Size(77, 36);
+            this.btnNext5Page.TabIndex = 4;
+            this.btnNext5Page.Text = ">>";
+            this.toolTip1.SetToolTip(this.btnNext5Page, "下五頁");
+            this.btnNext5Page.UseVisualStyleBackColor = true;
+            this.btnNext5Page.Click += new System.EventHandler(this.btnNext5Page_Click);
             // 
-            // btnLast
+            // btnLastPage
             // 
-            this.btnLast.Location = new System.Drawing.Point(86, 45);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(77, 36);
-            this.btnLast.TabIndex = 5;
-            this.btnLast.Text = ">|";
-            this.btnLast.UseVisualStyleBackColor = true;
+            this.btnLastPage.Location = new System.Drawing.Point(86, 45);
+            this.btnLastPage.Name = "btnLastPage";
+            this.btnLastPage.Size = new System.Drawing.Size(77, 36);
+            this.btnLastPage.TabIndex = 5;
+            this.btnLastPage.Text = ">|";
+            this.toolTip1.SetToolTip(this.btnLastPage, "最後一頁");
+            this.btnLastPage.UseVisualStyleBackColor = true;
+            this.btnLastPage.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.label3);
-            this.flowLayoutPanel2.Controls.Add(this.button7);
-            this.flowLayoutPanel2.Controls.Add(this.button8);
+            this.flowLayoutPanel2.Controls.Add(this.btnScaleLarge);
+            this.flowLayoutPanel2.Controls.Add(this.btnScaleSmall);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 339);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 430);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(351, 45);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(374, 90);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // label3
@@ -416,32 +434,34 @@
             this.label3.Text = "Scaling";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button7
+            // btnScaleLarge
             // 
-            this.button7.Location = new System.Drawing.Point(97, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(48, 36);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "+";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnScaleLarge.Location = new System.Drawing.Point(97, 3);
+            this.btnScaleLarge.Name = "btnScaleLarge";
+            this.btnScaleLarge.Size = new System.Drawing.Size(48, 36);
+            this.btnScaleLarge.TabIndex = 6;
+            this.btnScaleLarge.Text = "+";
+            this.btnScaleLarge.UseVisualStyleBackColor = true;
+            this.btnScaleLarge.Click += new System.EventHandler(this.btnScaleLarge_Click);
             // 
-            // button8
+            // btnScaleSmall
             // 
-            this.button8.Location = new System.Drawing.Point(151, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(48, 36);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "-";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnScaleSmall.Location = new System.Drawing.Point(151, 3);
+            this.btnScaleSmall.Name = "btnScaleSmall";
+            this.btnScaleSmall.Size = new System.Drawing.Size(48, 36);
+            this.btnScaleSmall.TabIndex = 7;
+            this.btnScaleSmall.Text = "-";
+            this.btnScaleSmall.UseVisualStyleBackColor = true;
+            this.btnScaleSmall.Click += new System.EventHandler(this.btnScaleSmall_Click);
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.btnPaint);
             this.flowLayoutPanel3.Controls.Add(this.btnSave);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 390);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 526);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(351, 229);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(374, 93);
             this.flowLayoutPanel3.TabIndex = 5;
             // 
             // btnPaint
@@ -462,6 +482,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // HistoryChartPanel
             // 
@@ -509,22 +530,23 @@
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.Button btnLast100;
+        private System.Windows.Forms.Button btnFirstPage;
+        private System.Windows.Forms.Button btnLast5Page;
         private System.Windows.Forms.Button btnLast25;
         private System.Windows.Forms.Button btnNextPage;
-        private System.Windows.Forms.Button btnNext100;
-        private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.Button btnNext5Page;
+        private System.Windows.Forms.Button btnLastPage;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnScaleLarge;
+        private System.Windows.Forms.Button btnScaleSmall;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button btnPaint;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DataVisualization.Charting.Chart m_Chart;
+        private System.Windows.Forms.ToolTip toolTip1;
 
 
     }
