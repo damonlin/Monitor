@@ -20,6 +20,8 @@ namespace HistoryChart
         private int MAX_POINT = 20;
         private int m_iPointPage = 0;
         private int m_iScale = 1;
+        private int m_iMaxValue = 1200;
+        private int m_iMinValue = 0;
 
         public HistoryChartPanel()
         {
@@ -218,6 +220,60 @@ namespace HistoryChart
             {
                 m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "";
             }
-        }        
+        }
+
+        private void txtMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() != "\r")
+                return;
+
+            int iMaxValue = Convert.ToInt32(txtMax.Text);
+
+            if (0 <= iMaxValue && iMaxValue <= 1200)
+            {
+                if (iMaxValue > Convert.ToInt32(txtMin.Text))
+                {
+                    m_Chart.ChartAreas["Default"].AxisY.Maximum = iMaxValue;
+                    m_iMaxValue = iMaxValue;
+                }
+                else
+                {
+                    MessageBox.Show("請輸入大於 Y Axis Min 的值");
+                    txtMax.Text = m_iMaxValue.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入 0 ~ 1200 的範圍");
+                txtMax.Text = m_iMaxValue.ToString();
+            }
+        }
+
+        private void txtMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() != "\r")
+                return;
+
+            int iMinValue = Convert.ToInt32(txtMin.Text);
+
+            if (0 <= iMinValue && iMinValue <= 1200)
+            {
+                if (iMinValue < Convert.ToInt32(txtMax.Text))
+                {
+                    m_Chart.ChartAreas["Default"].AxisY.Minimum = iMinValue;
+                    m_iMinValue = iMinValue;
+                }
+                else
+                {
+                    MessageBox.Show("請輸入小於 Y Axis Max 的值");
+                    txtMin.Text = m_iMinValue.ToString();
+                }
+            }
+            else
+            {
+                MessageBox.Show("請輸入 0 ~ 1200 的範圍");
+                txtMin.Text = m_iMinValue.ToString();
+            }
+        }       
     }
 }

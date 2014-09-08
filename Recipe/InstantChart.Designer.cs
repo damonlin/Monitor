@@ -17,12 +17,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -185,7 +185,7 @@
             this.groupBox1.Size = new System.Drawing.Size(414, 85);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Y Axis";
+            this.groupBox1.Text = "Y1  Axis";
             // 
             // tableLayoutPanel3
             // 
@@ -323,48 +323,48 @@
             // 
             // m_Chart
             // 
-            chartArea2.AxisX.Interval = 1D;
-            chartArea2.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea2.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea2.AxisX.LabelStyle.Interval = 1D;
-            chartArea2.AxisY.Interval = 100D;
-            chartArea2.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea2.AxisY.LabelStyle.Interval = 100D;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.DarkRed;
-            chartArea2.AxisY.Maximum = 1200D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.CursorY.IsUserEnabled = true;
-            chartArea2.CursorY.IsUserSelectionEnabled = true;
-            chartArea2.Name = "Default";
-            chartArea2.Position.Auto = false;
-            chartArea2.Position.Height = 94F;
-            chartArea2.Position.Width = 100F;
-            chartArea2.Position.Y = 3F;
-            this.m_Chart.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.Interval = 1D;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea1.AxisX.LabelStyle.Interval = 1D;
+            chartArea1.AxisY.Interval = 100D;
+            chartArea1.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea1.AxisY.LabelStyle.Interval = 100D;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.DarkRed;
+            chartArea1.AxisY.Maximum = 1200D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.CursorY.IsUserEnabled = true;
+            chartArea1.CursorY.IsUserSelectionEnabled = true;
+            chartArea1.Name = "Default";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 94F;
+            chartArea1.Position.Width = 100F;
+            chartArea1.Position.Y = 3F;
+            this.m_Chart.ChartAreas.Add(chartArea1);
             this.m_Chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            legend4.Name = "Legend2";
-            this.m_Chart.Legends.Add(legend3);
-            this.m_Chart.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            legend2.Name = "Legend2";
+            this.m_Chart.Legends.Add(legend1);
+            this.m_Chart.Legends.Add(legend2);
             this.m_Chart.Location = new System.Drawing.Point(259, 3);
             this.m_Chart.Name = "m_Chart";
-            series4.ChartArea = "Default";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Legend = "Legend1";
-            series4.Name = "LVG";
-            series5.ChartArea = "Default";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend2";
-            series5.LegendText = "HVG";
-            series5.Name = "HVG";
-            series6.ChartArea = "Default";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "Pumping";
-            series6.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.m_Chart.Series.Add(series4);
-            this.m_Chart.Series.Add(series5);
-            this.m_Chart.Series.Add(series6);
+            series1.ChartArea = "Default";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "LVG";
+            series2.ChartArea = "Default";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend2";
+            series2.LegendText = "HVG";
+            series2.Name = "HVG";
+            series3.ChartArea = "Default";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Pumping";
+            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.m_Chart.Series.Add(series1);
+            this.m_Chart.Series.Add(series2);
+            this.m_Chart.Series.Add(series3);
             this.m_Chart.Size = new System.Drawing.Size(728, 540);
             this.m_Chart.TabIndex = 8;
             // 
