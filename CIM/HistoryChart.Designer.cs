@@ -164,7 +164,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.03448F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.96552F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel3.Controls.Add(this.dateTimePickerEnd, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
@@ -189,7 +189,7 @@
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerEnd.Location = new System.Drawing.Point(74, 43);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(152, 37);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(151, 37);
             this.dateTimePickerEnd.TabIndex = 9;
             // 
             // label1
@@ -216,7 +216,7 @@
             // numberStartHour
             // 
             this.numberStartHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numberStartHour.Location = new System.Drawing.Point(232, 3);
+            this.numberStartHour.Location = new System.Drawing.Point(231, 3);
             this.numberStartHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -229,7 +229,7 @@
             // 
             // numberEndHour
             // 
-            this.numberEndHour.Location = new System.Drawing.Point(232, 43);
+            this.numberEndHour.Location = new System.Drawing.Point(231, 43);
             this.numberEndHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -242,7 +242,7 @@
             // 
             // numberStartMin
             // 
-            this.numberStartMin.Location = new System.Drawing.Point(305, 3);
+            this.numberStartMin.Location = new System.Drawing.Point(304, 3);
             this.numberStartMin.Maximum = new decimal(new int[] {
             60,
             0,
@@ -255,7 +255,7 @@
             // 
             // numberEndMin
             // 
-            this.numberEndMin.Location = new System.Drawing.Point(305, 43);
+            this.numberEndMin.Location = new System.Drawing.Point(304, 43);
             this.numberEndMin.Maximum = new decimal(new int[] {
             60,
             0,
@@ -273,7 +273,7 @@
             this.dateTimePickerStart.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerStart.Location = new System.Drawing.Point(74, 3);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(152, 37);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(151, 37);
             this.dateTimePickerStart.TabIndex = 8;
             // 
             // chkScientific

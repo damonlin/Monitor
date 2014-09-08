@@ -85,6 +85,9 @@ namespace HistoryChart
             m_Chart.Series[0].Points.Clear();
             m_Chart.Series[1].Points.Clear();
 
+            m_HVGData.Clear();
+            m_LVGData.Clear();
+
             LoadLVGData();
             LoadHVGData();
 

@@ -64,7 +64,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.m_HVGChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,6 +75,8 @@
             this.labelHVG = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.m_HVGChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -94,10 +95,11 @@
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_HVGChart)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_LVGChart)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_HVGChart)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // plcTimer
@@ -118,16 +120,15 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 555F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1274, 954);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -135,9 +136,9 @@
             // 
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 402);
+            this.panel2.Location = new System.Drawing.Point(3, 289);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1268, 549);
+            this.panel2.Size = new System.Drawing.Size(1268, 662);
             this.panel2.TabIndex = 0;
             // 
             // groupBox2
@@ -152,7 +153,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1268, 549);
+            this.groupBox2.Size = new System.Drawing.Size(1268, 662);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             // 
@@ -224,7 +225,7 @@
             this.pictureBox1.Image = global::AutoMode.Properties.Resources.圖控頁面1;
             this.pictureBox1.Location = new System.Drawing.Point(3, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1262, 528);
+            this.pictureBox1.Size = new System.Drawing.Size(1262, 641);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
@@ -241,7 +242,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1268, 393);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1268, 280);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // groupBox3
@@ -251,7 +252,7 @@
             this.groupBox3.Location = new System.Drawing.Point(822, 2);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(444, 389);
+            this.groupBox3.Size = new System.Drawing.Size(444, 276);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Auto Mode";
@@ -268,7 +269,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(438, 368);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(438, 255);
             this.tableLayoutPanel11.TabIndex = 0;
             // 
             // btnManual
@@ -278,7 +279,7 @@
             this.btnManual.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManual.Location = new System.Drawing.Point(222, 3);
             this.btnManual.Name = "btnManual";
-            this.btnManual.Size = new System.Drawing.Size(213, 362);
+            this.btnManual.Size = new System.Drawing.Size(213, 249);
             this.btnManual.TabIndex = 54;
             this.btnManual.Text = "Manual";
             this.btnManual.UseVisualStyleBackColor = true;
@@ -291,7 +292,7 @@
             this.btnAuto.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuto.Location = new System.Drawing.Point(3, 3);
             this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(213, 362);
+            this.btnAuto.Size = new System.Drawing.Size(213, 249);
             this.btnAuto.TabIndex = 53;
             this.btnAuto.Text = "Auto";
             this.btnAuto.UseVisualStyleBackColor = true;
@@ -305,7 +306,7 @@
             this.groupBox4.Location = new System.Drawing.Point(1, 1);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(818, 391);
+            this.groupBox4.Size = new System.Drawing.Size(818, 278);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Information";
@@ -322,7 +323,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(812, 370);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(812, 257);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label1
@@ -332,7 +333,7 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(806, 185);
+            this.label1.Size = new System.Drawing.Size(806, 128);
             this.label1.TabIndex = 52;
             this.label1.Text = "PUMP QC Monitor System";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -345,11 +346,11 @@
             this.tableLayoutPanel6.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 188);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 131);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(806, 179);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(806, 123);
             this.tableLayoutPanel6.TabIndex = 53;
             // 
             // textBox1
@@ -369,7 +370,7 @@
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(397, 179);
+            this.label8.Size = new System.Drawing.Size(397, 123);
             this.label8.TabIndex = 45;
             this.label8.Text = "S/N ID:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -410,12 +411,11 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel10, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.chart1, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel9, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.m_HVGChart, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.m_LVGChart, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel8, 0, 3);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 4);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 9;
@@ -428,6 +428,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38462F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692308F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.38462F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(435, 937);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
@@ -441,16 +442,19 @@
             chartArea1.Position.Width = 100F;
             chartArea1.Position.Y = 3F;
             this.chart2.ChartAreas.Add(chartArea1);
+            this.chart2.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Name = "Legend1";
             this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(3, 795);
             this.chart2.Name = "chart2";
+            series1.BorderWidth = 3;
             series1.ChartArea = "Default";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Red;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(427, 139);
+            this.chart2.Size = new System.Drawing.Size(429, 139);
             this.chart2.TabIndex = 14;
             this.chart2.Text = "Watt";
             // 
@@ -460,7 +464,7 @@
             this.tableLayoutPanel10.ColumnCount = 3;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.34043F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.65957F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel10.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label13, 0, 0);
@@ -477,9 +481,9 @@
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(324, 2);
+            this.label11.Location = new System.Drawing.Point(321, 2);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 62);
+            this.label11.Size = new System.Drawing.Size(103, 62);
             this.label11.TabIndex = 40;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -489,9 +493,9 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(156, 2);
+            this.label12.Location = new System.Drawing.Point(155, 2);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(160, 62);
+            this.label12.Size = new System.Drawing.Size(158, 62);
             this.label12.TabIndex = 39;
             this.label12.Text = "0";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -504,7 +508,7 @@
             this.label13.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label13.Location = new System.Drawing.Point(5, 2);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(143, 62);
+            this.label13.Size = new System.Drawing.Size(142, 62);
             this.label13.TabIndex = 38;
             this.label13.Text = "Watt Value:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -519,16 +523,19 @@
             chartArea2.Position.Width = 100F;
             chartArea2.Position.Y = 3F;
             this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
             legend2.Name = "Legend1";
             this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(3, 579);
             this.chart1.Name = "chart1";
+            series2.BorderWidth = 3;
             series2.ChartArea = "Default";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Red;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(427, 138);
+            this.chart1.Size = new System.Drawing.Size(429, 138);
             this.chart1.TabIndex = 12;
             this.chart1.Text = "Current";
             // 
@@ -538,7 +545,7 @@
             this.tableLayoutPanel9.ColumnCount = 3;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.34043F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.65957F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel9.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label10, 0, 0);
@@ -555,9 +562,9 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(324, 2);
+            this.label7.Location = new System.Drawing.Point(321, 2);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 62);
+            this.label7.Size = new System.Drawing.Size(103, 62);
             this.label7.TabIndex = 40;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -567,9 +574,9 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(156, 2);
+            this.label9.Location = new System.Drawing.Point(155, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(160, 62);
+            this.label9.Size = new System.Drawing.Size(158, 62);
             this.label9.TabIndex = 39;
             this.label9.Text = "0";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -582,37 +589,10 @@
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label10.Location = new System.Drawing.Point(5, 2);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(143, 62);
+            this.label10.Size = new System.Drawing.Size(142, 62);
             this.label10.TabIndex = 38;
             this.label10.Text = "Current Value:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // m_HVGChart
-            // 
-            chartArea3.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea3.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea3.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea3.AxisY.Maximum = 1200D;
-            chartArea3.AxisY.Minimum = 0.001D;
-            chartArea3.Name = "Default";
-            chartArea3.Position.Auto = false;
-            chartArea3.Position.Height = 94F;
-            chartArea3.Position.Width = 100F;
-            chartArea3.Position.Y = 3F;
-            this.m_HVGChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.m_HVGChart.Legends.Add(legend3);
-            this.m_HVGChart.Location = new System.Drawing.Point(3, 363);
-            this.m_HVGChart.Name = "m_HVGChart";
-            series3.ChartArea = "Default";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.IsVisibleInLegend = false;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.m_HVGChart.Series.Add(series3);
-            this.m_HVGChart.Size = new System.Drawing.Size(427, 138);
-            this.m_HVGChart.TabIndex = 6;
-            this.m_HVGChart.Text = "HVG";
             // 
             // label2
             // 
@@ -632,7 +612,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.34043F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.65957F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanel7.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.labelLVG, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label3, 0, 0);
@@ -649,9 +629,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(324, 2);
+            this.label4.Location = new System.Drawing.Point(321, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 62);
+            this.label4.Size = new System.Drawing.Size(103, 62);
             this.label4.TabIndex = 40;
             this.label4.Text = "Torr";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -662,9 +642,9 @@
             this.labelLVG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.labelLVG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelLVG.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLVG.Location = new System.Drawing.Point(156, 2);
+            this.labelLVG.Location = new System.Drawing.Point(155, 2);
             this.labelLVG.Name = "labelLVG";
-            this.labelLVG.Size = new System.Drawing.Size(160, 62);
+            this.labelLVG.Size = new System.Drawing.Size(158, 62);
             this.labelLVG.TabIndex = 39;
             this.labelLVG.Text = "0";
             this.labelLVG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -677,34 +657,37 @@
             this.label3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label3.Location = new System.Drawing.Point(5, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 62);
+            this.label3.Size = new System.Drawing.Size(142, 62);
             this.label3.TabIndex = 38;
             this.label3.Text = "LVG Value:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // m_LVGChart
             // 
-            chartArea4.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea4.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea4.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea4.AxisY.Maximum = 1200D;
-            chartArea4.Name = "Default";
-            chartArea4.Position.Auto = false;
-            chartArea4.Position.Height = 94F;
-            chartArea4.Position.Width = 100F;
-            chartArea4.Position.Y = 3F;
-            this.m_LVGChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.m_LVGChart.Legends.Add(legend4);
+            chartArea3.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea3.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea3.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea3.AxisY.Maximum = 1200D;
+            chartArea3.Name = "Default";
+            chartArea3.Position.Auto = false;
+            chartArea3.Position.Height = 94F;
+            chartArea3.Position.Width = 100F;
+            chartArea3.Position.Y = 3F;
+            this.m_LVGChart.ChartAreas.Add(chartArea3);
+            this.m_LVGChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend3.Name = "Legend1";
+            this.m_LVGChart.Legends.Add(legend3);
             this.m_LVGChart.Location = new System.Drawing.Point(3, 147);
             this.m_LVGChart.Name = "m_LVGChart";
-            series4.ChartArea = "Default";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.IsVisibleInLegend = false;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.m_LVGChart.Series.Add(series4);
-            this.m_LVGChart.Size = new System.Drawing.Size(427, 138);
+            series3.BorderWidth = 3;
+            series3.ChartArea = "Default";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.Red;
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.m_LVGChart.Series.Add(series3);
+            this.m_LVGChart.Size = new System.Drawing.Size(429, 138);
             this.m_LVGChart.TabIndex = 2;
             this.m_LVGChart.Text = "LVG";
             // 
@@ -714,7 +697,7 @@
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.72727F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.27273F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel8.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.labelHVG, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.label5, 0, 0);
@@ -732,9 +715,9 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label6.Location = new System.Drawing.Point(326, 2);
+            this.label6.Location = new System.Drawing.Point(323, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 62);
+            this.label6.Size = new System.Drawing.Size(101, 62);
             this.label6.TabIndex = 46;
             this.label6.Text = "Torr";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -745,9 +728,9 @@
             this.labelHVG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.labelHVG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelHVG.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHVG.Location = new System.Drawing.Point(158, 2);
+            this.labelHVG.Location = new System.Drawing.Point(157, 2);
             this.labelHVG.Name = "labelHVG";
-            this.labelHVG.Size = new System.Drawing.Size(160, 62);
+            this.labelHVG.Size = new System.Drawing.Size(158, 62);
             this.labelHVG.TabIndex = 45;
             this.labelHVG.Text = "0";
             this.labelHVG.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -760,7 +743,7 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.label5.Location = new System.Drawing.Point(5, 2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 62);
+            this.label5.Size = new System.Drawing.Size(144, 62);
             this.label5.TabIndex = 44;
             this.label5.Text = "HVG Value:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -770,6 +753,44 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // m_HVGChart
+            // 
+            chartArea4.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea4.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea4.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea4.AxisY.Maximum = 1200D;
+            chartArea4.Name = "Default";
+            chartArea4.Position.Auto = false;
+            chartArea4.Position.Height = 94F;
+            chartArea4.Position.Width = 100F;
+            chartArea4.Position.Y = 3F;
+            this.m_HVGChart.ChartAreas.Add(chartArea4);
+            this.m_HVGChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend4.Name = "Legend1";
+            this.m_HVGChart.Legends.Add(legend4);
+            this.m_HVGChart.Location = new System.Drawing.Point(0, 0);
+            this.m_HVGChart.Name = "m_HVGChart";
+            series4.BorderWidth = 3;
+            series4.ChartArea = "Default";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.Red;
+            series4.IsVisibleInLegend = false;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.m_HVGChart.Series.Add(series4);
+            this.m_HVGChart.Size = new System.Drawing.Size(429, 138);
+            this.m_HVGChart.TabIndex = 15;
+            this.m_HVGChart.Text = "LVG";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.m_HVGChart);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 363);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(429, 138);
+            this.panel3.TabIndex = 16;
             // 
             // AutoModePanel
             // 
@@ -804,12 +825,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.m_HVGChart)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_LVGChart)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.m_HVGChart)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -845,7 +867,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart m_HVGChart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Label label4;
@@ -864,6 +885,8 @@
         private System.Windows.Forms.Label labelPumping;
         private System.Windows.Forms.Label labelCycle;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart m_HVGChart;
 
 
 

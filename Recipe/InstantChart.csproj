@@ -51,6 +51,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="TabControlEX, Version=0.0.3271.41578, Culture=neutral, PublicKeyToken=1db242dc828e4b4e">
       <SpecificVersion>False</SpecificVersion>
@@ -88,9 +89,9 @@
       <Project>{16C8E8F6-E87C-41A9-AFA0-2D155569212E}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Maintain\PrintScreen.csproj">
-      <Project>{A9DDCCF9-34C8-419A-8D54-6CD7E70557E7}</Project>
-      <Name>PrintScreen</Name>
+    <ProjectReference Include="..\Operate\AutoMode.csproj">
+      <Project>{0cbc0980-d7d5-4f78-8f84-d510af0e8e6f}</Project>
+      <Name>AutoMode</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

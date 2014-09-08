@@ -73,16 +73,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CIM\HistoryChart.csproj">
-      <Project>{AF7876BD-588D-43D6-9FFC-4999E4C88CB4}</Project>
-      <Name>HistoryChart</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{16C8E8F6-E87C-41A9-AFA0-2D155569212E}</Project>
       <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Module\ContrelModule.csproj">
-      <Project>{8C964985-018D-442B-B6CB-9A7E2BFDBD81}</Project>
+      <Project>{8c964985-018d-442b-b6cb-9a7e2bfdbd81}</Project>
       <Name>ContrelModule</Name>
     </ProjectReference>
   </ItemGroup>

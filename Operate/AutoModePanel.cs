@@ -26,8 +26,8 @@ namespace AutoMode
         private bool bVVON = false;
         private bool bAuto = false;
 
-        private FileStream m_HVGFile = null;
-        private StreamWriter m_HVGWriter = null;
+        //private FileStream m_HVGFile = null;
+        //private StreamWriter m_HVGWriter = null;
 
         private FileStream m_LVGFile = null;
         private StreamWriter m_LVGWriter = null;
@@ -53,6 +53,21 @@ namespace AutoMode
                 singleton = new AutoModePanel();
             }
             return singleton;
+        }
+
+        public string GetHVG()
+        {
+            return labelHVG.Text;
+        }
+
+        public string GetLVG()
+        {
+            return labelLVG.Text;
+        }
+
+        public string GetPumping()
+        {
+            return labelPumping.Text;
         }
 
         private void plcTimer_Tick(object sender, EventArgs e)
@@ -96,7 +111,7 @@ namespace AutoMode
                 }         
             }
             ProcessChart(m_LVGChart, labelLVG.Text);
-            ProcessChart(m_HVGChart, labelHVG.Text);            
+            ProcessChart(m_HVGChart, labelHVG.Text);
         }
 
         private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, string value )

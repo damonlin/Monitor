@@ -52,7 +52,8 @@ namespace Monitor
 
         private void InitControl()
         {
-            Common.Template.InfoPanelTemplate automodePanel = new AutoMode.AutoModePanel();
+            //Common.Template.InfoPanelTemplate automodePanel = new AutoMode.AutoModePanel();
+            Common.Template.InfoPanelTemplate automodePanel = AutoMode.AutoModePanel.getSingleton();
             Common.Template.InfoPanelTemplate ParaPanel = new Parameter.ParameterPanel();
             Common.Template.InfoPanelTemplate instantchartPanel = new InstantChart.InstantChartPanel();
             Common.Template.InfoPanelTemplate historychartPanel = new HistoryChart.HistoryChartPanel();
