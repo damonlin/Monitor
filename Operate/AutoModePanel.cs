@@ -134,7 +134,8 @@ namespace AutoMode
          
             FileStream myFile = File.Open(path + fileName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
             StreamWriter myWriter = new StreamWriter(myFile);
-            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + newY.ToString());
+            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + newY.ToString() + " " + txtID.Text);
+            //myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + value + " " + txtID.Text);
             myWriter.Dispose();
             myFile.Dispose();
 
