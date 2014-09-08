@@ -18,7 +18,8 @@ namespace HistoryChart
         private List<string> m_LVGData = new List<string>();
         private List<string> m_HVGData = new List<string>();
         private int MAX_POINT = 20;
-        private int m_iPointPage = 0;  
+        private int m_iPointPage = 0;
+        private int m_iScale = 1;
 
         public HistoryChartPanel()
         {
@@ -96,14 +97,14 @@ namespace HistoryChart
 
         private void chkScientific_Click(object sender, EventArgs e)
         {
-            if (chkScientific.Checked)
-            {
-                m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "0.00E+00";                
-            }
-            else
-            {
-                m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "";
-            }
+            //if (chkScientific.Checked)
+            //{
+            //    m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "0.00E+00";                
+            //}
+            //else
+            //{
+            //    m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "";
+            //}
         }
 
         private void UpdateChart()
@@ -183,12 +184,21 @@ namespace HistoryChart
         }
 
         private void btnScaleLarge_Click(object sender, EventArgs e)
-        {
-            MAX_POINT += 10;
-            if (MAX_POINT >= 100)
-                MAX_POINT = 100;
+        {            
+            m_iScale++;
+            if (m_iScale >= 12)
+                m_iScale = 12;
+           
+            m_Chart.ChartAreas["Default"].Axes[1].ScaleView.Zoom( 0 , 1200/m_iScale);
+        }
 
-            UpdateChart();
+        private void btnScaleSmall_Click(object sender, EventArgs e)
+        {
+            m_iScale--;
+            if (m_iScale <= 1)
+                m_iScale = 1;
+
+            m_Chart.ChartAreas["Default"].Axes[1].ScaleView.Zoom(0, 1200 / m_iScale);            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -196,13 +206,18 @@ namespace HistoryChart
             
         }
 
-        private void btnScaleSmall_Click(object sender, EventArgs e)
-        {
-            MAX_POINT -= 10;
-            if (MAX_POINT <= 20)
-                MAX_POINT = 20;
 
-            UpdateChart();
-        }
+
+        private void chkScientific_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkScientific.Checked)
+            {
+                m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "0.00E+00";
+            }
+            else
+            {
+                m_Chart.ChartAreas[0].AxisY.LabelStyle.Format = "";
+            }
+        }        
     }
 }

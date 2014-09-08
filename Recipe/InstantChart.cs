@@ -17,7 +17,7 @@ namespace InstantChart
         private Random random = new Random();
         private int pointIndex = 0;
         private AutoMode.AutoModePanel m_AutoPanel = AutoMode.AutoModePanel.getSingleton();
-        private int m_iScale = 0;
+        private int m_iScale = 1;
         private int m_iY1MaxValue = 1200;
         private int m_iY1MinValue = 0;
         private int m_iY2MaxValue = 1200;
@@ -36,7 +36,7 @@ namespace InstantChart
             }
             return singleton;
         }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             ProcessChart(0, m_AutoPanel.GetLVG());
@@ -85,8 +85,7 @@ namespace InstantChart
 
         private void button1_Click(object sender, EventArgs e)
         {
-            m_iScale++;
-            m_Chart.ChartAreas["Default"].Axes[0].ScaleView.Zoom(1, m_iScale); 
+
         }    
 
         private void txtY1Max_KeyPress(object sender, KeyPressEventArgs e)
@@ -195,6 +194,24 @@ namespace InstantChart
                 MessageBox.Show("½Ð¿é¤J 0 ~ 1200 ªº½d³ò");
                 txtY2Min.Text = m_iY2MinValue.ToString();
             }
+        }
+
+        private void btnScaleLarge_Click(object sender, EventArgs e)
+        {
+            m_iScale++;
+            if (m_iScale >= 12)
+                m_iScale = 12;
+
+            m_Chart.ChartAreas["Default"].Axes[1].ScaleView.Zoom(0, 1200 / m_iScale);
+        }
+
+        private void btnScaleSmall_Click(object sender, EventArgs e)
+        {
+            m_iScale--;
+            if (m_iScale <= 1)
+                m_iScale = 1;
+
+            m_Chart.ChartAreas["Default"].Axes[1].ScaleView.Zoom(0, 1200 / m_iScale);
         }
     }
 }
