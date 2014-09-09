@@ -25,7 +25,8 @@ namespace HistoryChart
 
         public HistoryChartPanel()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            m_Chart.Series[1].Points.AddXY("0", "0");
         }
 
         public static HistoryChartPanel getSingleton()
