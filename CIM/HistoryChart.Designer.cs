@@ -16,12 +16,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.m_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,6 +48,15 @@
             this.btnNext5Page = new System.Windows.Forms.Button();
             this.btnLastPage = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnScaleSmall = new System.Windows.Forms.Button();
+            this.btnScaleLarge = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMax = new System.Windows.Forms.TextBox();
+            this.txtMin = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPaint = new System.Windows.Forms.Button();
@@ -55,15 +64,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chkScientific = new System.Windows.Forms.CheckBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnScaleLarge = new System.Windows.Forms.Button();
-            this.btnScaleSmall = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMax = new System.Windows.Forms.TextBox();
-            this.txtMin = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_Chart)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,12 +77,12 @@
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -103,48 +103,51 @@
             // 
             // m_Chart
             // 
-            chartArea7.AxisX.Interval = 1D;
-            chartArea7.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea7.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea7.AxisX.LabelStyle.Interval = 1D;
-            chartArea7.AxisY.Interval = 100D;
-            chartArea7.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea7.AxisY.LabelStyle.Interval = 100D;
-            chartArea7.AxisY.LineColor = System.Drawing.Color.DarkRed;
-            chartArea7.AxisY.Maximum = 1200D;
-            chartArea7.AxisY.Minimum = 0D;
-            chartArea7.CursorY.IsUserEnabled = true;
-            chartArea7.CursorY.IsUserSelectionEnabled = true;
-            chartArea7.Name = "Default";
-            chartArea7.Position.Auto = false;
-            chartArea7.Position.Height = 94F;
-            chartArea7.Position.Width = 100F;
-            chartArea7.Position.Y = 3F;
-            this.m_Chart.ChartAreas.Add(chartArea7);
+            chartArea1.AxisX.Interval = 1D;
+            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea1.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea1.AxisX.LabelStyle.Interval = 1D;
+            chartArea1.AxisY.Interval = 100D;
+            chartArea1.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea1.AxisY.LabelStyle.Interval = 100D;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.DarkRed;
+            chartArea1.AxisY.Maximum = 1200D;
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.CursorY.IsUserEnabled = true;
+            chartArea1.CursorY.IsUserSelectionEnabled = true;
+            chartArea1.Name = "Default";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 94F;
+            chartArea1.Position.Width = 100F;
+            chartArea1.Position.Y = 3F;
+            this.m_Chart.ChartAreas.Add(chartArea1);
             this.m_Chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend13.Name = "Legend1";
-            legend14.Name = "Legend2";
-            this.m_Chart.Legends.Add(legend13);
-            this.m_Chart.Legends.Add(legend14);
+            legend1.Name = "Legend1";
+            legend2.Name = "Legend2";
+            this.m_Chart.Legends.Add(legend1);
+            this.m_Chart.Legends.Add(legend2);
             this.m_Chart.Location = new System.Drawing.Point(410, 3);
             this.m_Chart.Name = "m_Chart";
-            series19.ChartArea = "Default";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series19.Legend = "Legend1";
-            series19.Name = "LVG";
-            series20.ChartArea = "Default";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series20.Legend = "Legend2";
-            series20.LegendText = "HVG";
-            series20.Name = "HVG";
-            series21.ChartArea = "Default";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series21.Legend = "Legend1";
-            series21.Name = "Pumping";
-            series21.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.m_Chart.Series.Add(series19);
-            this.m_Chart.Series.Add(series20);
-            this.m_Chart.Series.Add(series21);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "Default";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "LVG";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "Default";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend2";
+            series2.LegendText = "HVG";
+            series2.Name = "HVG";
+            series3.BorderWidth = 3;
+            series3.ChartArea = "Default";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Pumping";
+            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            this.m_Chart.Series.Add(series1);
+            this.m_Chart.Series.Add(series2);
+            this.m_Chart.Series.Add(series3);
             this.m_Chart.Size = new System.Drawing.Size(834, 643);
             this.m_Chart.TabIndex = 9;
             // 
@@ -198,7 +201,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.03448F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.96552F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel3.Controls.Add(this.dateTimePickerEnd, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
@@ -221,7 +224,7 @@
             this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerEnd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(78, 29);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(77, 29);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(160, 37);
             this.dateTimePickerEnd.TabIndex = 9;
@@ -233,7 +236,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 26);
+            this.label1.Size = new System.Drawing.Size(68, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Start";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,7 +247,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 26);
+            this.label2.Size = new System.Drawing.Size(68, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "End";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,7 +255,7 @@
             // numberStartHour
             // 
             this.numberStartHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numberStartHour.Location = new System.Drawing.Point(244, 3);
+            this.numberStartHour.Location = new System.Drawing.Point(243, 3);
             this.numberStartHour.Maximum = new decimal(new int[] {
             24,
             0,
@@ -265,7 +268,7 @@
             // 
             // numberEndHour
             // 
-            this.numberEndHour.Location = new System.Drawing.Point(244, 29);
+            this.numberEndHour.Location = new System.Drawing.Point(243, 29);
             this.numberEndHour.Maximum = new decimal(new int[] {
             23,
             0,
@@ -278,7 +281,7 @@
             // 
             // numberStartMin
             // 
-            this.numberStartMin.Location = new System.Drawing.Point(317, 3);
+            this.numberStartMin.Location = new System.Drawing.Point(316, 3);
             this.numberStartMin.Maximum = new decimal(new int[] {
             59,
             0,
@@ -291,7 +294,7 @@
             // 
             // numberEndMin
             // 
-            this.numberEndMin.Location = new System.Drawing.Point(317, 29);
+            this.numberEndMin.Location = new System.Drawing.Point(316, 29);
             this.numberEndMin.Maximum = new decimal(new int[] {
             59,
             0,
@@ -307,7 +310,7 @@
             this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePickerStart.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerStart.Location = new System.Drawing.Point(78, 3);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(77, 3);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(160, 37);
             this.dateTimePickerStart.TabIndex = 8;
@@ -450,68 +453,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Scaling";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.flowLayoutPanel3);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 547);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(389, 72);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.btnPaint);
-            this.flowLayoutPanel3.Controls.Add(this.btnSave);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 33);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(383, 36);
-            this.flowLayoutPanel3.TabIndex = 0;
-            // 
-            // btnPaint
-            // 
-            this.btnPaint.Location = new System.Drawing.Point(3, 3);
-            this.btnPaint.Name = "btnPaint";
-            this.btnPaint.Size = new System.Drawing.Size(116, 47);
-            this.btnPaint.TabIndex = 2;
-            this.btnPaint.Text = "Paint";
-            this.btnPaint.UseVisualStyleBackColor = true;
-            this.btnPaint.Click += new System.EventHandler(this.btnPaint_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(125, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(116, 47);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.chkScientific);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 61);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(389, 52);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            // 
-            // chkScientific
-            // 
-            this.chkScientific.AutoSize = true;
-            this.chkScientific.Checked = true;
-            this.chkScientific.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkScientific.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkScientific.Location = new System.Drawing.Point(3, 33);
-            this.chkScientific.Name = "chkScientific";
-            this.chkScientific.Size = new System.Drawing.Size(383, 16);
-            this.chkScientific.TabIndex = 3;
-            this.chkScientific.Text = "Scientific Notation(科學符號)";
-            this.chkScientific.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 3;
@@ -529,17 +470,6 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(383, 38);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // btnScaleLarge
-            // 
-            this.btnScaleLarge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnScaleLarge.Location = new System.Drawing.Point(3, 3);
-            this.btnScaleLarge.Name = "btnScaleLarge";
-            this.btnScaleLarge.Size = new System.Drawing.Size(89, 32);
-            this.btnScaleLarge.TabIndex = 9;
-            this.btnScaleLarge.Text = "+";
-            this.btnScaleLarge.UseVisualStyleBackColor = true;
-            this.btnScaleLarge.Click += new System.EventHandler(this.btnScaleLarge_Click);
-            // 
             // btnScaleSmall
             // 
             this.btnScaleSmall.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -550,6 +480,17 @@
             this.btnScaleSmall.Text = "-";
             this.btnScaleSmall.UseVisualStyleBackColor = true;
             this.btnScaleSmall.Click += new System.EventHandler(this.btnScaleSmall_Click);
+            // 
+            // btnScaleLarge
+            // 
+            this.btnScaleLarge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnScaleLarge.Location = new System.Drawing.Point(3, 3);
+            this.btnScaleLarge.Name = "btnScaleLarge";
+            this.btnScaleLarge.Size = new System.Drawing.Size(89, 32);
+            this.btnScaleLarge.TabIndex = 9;
+            this.btnScaleLarge.Text = "+";
+            this.btnScaleLarge.UseVisualStyleBackColor = true;
+            this.btnScaleLarge.Click += new System.EventHandler(this.btnScaleLarge_Click);
             // 
             // groupBox6
             // 
@@ -625,6 +566,68 @@
             this.txtMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMin_KeyPress);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.flowLayoutPanel3);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 547);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(389, 72);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.btnPaint);
+            this.flowLayoutPanel3.Controls.Add(this.btnSave);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 33);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(383, 36);
+            this.flowLayoutPanel3.TabIndex = 0;
+            // 
+            // btnPaint
+            // 
+            this.btnPaint.Location = new System.Drawing.Point(3, 3);
+            this.btnPaint.Name = "btnPaint";
+            this.btnPaint.Size = new System.Drawing.Size(116, 47);
+            this.btnPaint.TabIndex = 2;
+            this.btnPaint.Text = "Paint";
+            this.btnPaint.UseVisualStyleBackColor = true;
+            this.btnPaint.Click += new System.EventHandler(this.btnPaint_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(125, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(116, 47);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chkScientific);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 61);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(389, 52);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            // 
+            // chkScientific
+            // 
+            this.chkScientific.AutoSize = true;
+            this.chkScientific.Checked = true;
+            this.chkScientific.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkScientific.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chkScientific.Location = new System.Drawing.Point(3, 33);
+            this.chkScientific.Name = "chkScientific";
+            this.chkScientific.Size = new System.Drawing.Size(383, 16);
+            this.chkScientific.TabIndex = 3;
+            this.chkScientific.Text = "Scientific Notation(科學符號)";
+            this.chkScientific.UseVisualStyleBackColor = true;
+            // 
             // HistoryChartPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -646,14 +649,14 @@
             this.groupBox2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
