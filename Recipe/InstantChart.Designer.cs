@@ -17,12 +17,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -44,14 +47,14 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.m_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -323,51 +326,66 @@
             // 
             // m_Chart
             // 
-            chartArea1.AxisX.Interval = 1D;
-            chartArea1.AxisX.LabelAutoFitMaxFontSize = 7;
-            chartArea1.AxisX.LabelStyle.Format = "HH:mm:ss";
-            chartArea1.AxisX.LabelStyle.Interval = 1D;
-            chartArea1.AxisY.Interval = 100D;
-            chartArea1.AxisY.LabelStyle.Format = "0.00E+00";
-            chartArea1.AxisY.LabelStyle.Interval = 100D;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.DarkRed;
-            chartArea1.AxisY.Maximum = 1200D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.CursorY.IsUserEnabled = true;
-            chartArea1.CursorY.IsUserSelectionEnabled = true;
-            chartArea1.Name = "Default";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 94F;
-            chartArea1.Position.Width = 100F;
-            chartArea1.Position.Y = 3F;
-            this.m_Chart.ChartAreas.Add(chartArea1);
+            chartArea2.AxisX.Interval = 1D;
+            chartArea2.AxisX.LabelAutoFitMaxFontSize = 7;
+            chartArea2.AxisX.LabelStyle.Format = "HH:mm:ss";
+            chartArea2.AxisX.LabelStyle.Interval = 1D;
+            chartArea2.AxisY.Interval = 100D;
+            chartArea2.AxisY.LabelStyle.Format = "0.00E+00";
+            chartArea2.AxisY.LabelStyle.Interval = 100D;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.DarkRed;
+            chartArea2.AxisY.Maximum = 1200D;
+            chartArea2.AxisY.Minimum = 0D;
+            chartArea2.CursorY.IsUserEnabled = true;
+            chartArea2.CursorY.IsUserSelectionEnabled = true;
+            chartArea2.Name = "Default";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 94F;
+            chartArea2.Position.Width = 100F;
+            chartArea2.Position.Y = 3F;
+            this.m_Chart.ChartAreas.Add(chartArea2);
             this.m_Chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            legend2.Name = "Legend2";
-            this.m_Chart.Legends.Add(legend1);
-            this.m_Chart.Legends.Add(legend2);
+            legend3.Name = "Legend1";
+            legend4.Name = "Legend2";
+            this.m_Chart.Legends.Add(legend3);
+            this.m_Chart.Legends.Add(legend4);
             this.m_Chart.Location = new System.Drawing.Point(259, 3);
             this.m_Chart.Name = "m_Chart";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "Default";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "LVG";
-            series2.BorderWidth = 3;
-            series2.ChartArea = "Default";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend2";
-            series2.LegendText = "HVG";
-            series2.Name = "HVG";
-            series3.BorderWidth = 3;
-            series3.ChartArea = "Default";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Pumping";
-            series3.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
-            this.m_Chart.Series.Add(series1);
-            this.m_Chart.Series.Add(series2);
-            this.m_Chart.Series.Add(series3);
+            series7.BorderWidth = 3;
+            series7.ChartArea = "Default";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Legend = "Legend1";
+            series7.Name = "LVG";
+            series8.BorderWidth = 3;
+            series8.ChartArea = "Default";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Legend = "Legend2";
+            series8.LegendText = "HVG";
+            series8.Name = "HVG";
+            series9.BorderWidth = 3;
+            series9.ChartArea = "Default";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Legend = "Legend1";
+            series9.Name = "Pump Speed";
+            series9.YAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Secondary;
+            series10.ChartArea = "Default";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Legend = "Legend1";
+            series10.Name = "Current";
+            series11.ChartArea = "Default";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series11.Legend = "Legend1";
+            series11.Name = "Watt";
+            series12.ChartArea = "Default";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series12.Legend = "Legend1";
+            series12.Name = "MFC";
+            this.m_Chart.Series.Add(series7);
+            this.m_Chart.Series.Add(series8);
+            this.m_Chart.Series.Add(series9);
+            this.m_Chart.Series.Add(series10);
+            this.m_Chart.Series.Add(series11);
+            this.m_Chart.Series.Add(series12);
             this.m_Chart.Size = new System.Drawing.Size(728, 516);
             this.m_Chart.TabIndex = 8;
             // 
@@ -386,17 +404,119 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(238, 482);
             this.tableLayoutPanel7.TabIndex = 9;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(232, 39);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "LVG";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox2.Location = new System.Drawing.Point(0, 39);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(232, 39);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "HVG";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox3.Location = new System.Drawing.Point(0, 78);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(232, 39);
+            this.checkBox3.TabIndex = 8;
+            this.checkBox3.Text = "Current";
+            this.checkBox3.UseVisualStyleBackColor = false;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox4.Location = new System.Drawing.Point(0, 117);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(232, 39);
+            this.checkBox4.TabIndex = 9;
+            this.checkBox4.Text = "Watt";
+            this.checkBox4.UseVisualStyleBackColor = false;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox5.Checked = true;
+            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox5.Location = new System.Drawing.Point(0, 156);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(232, 39);
+            this.checkBox5.TabIndex = 10;
+            this.checkBox5.Text = "MFC";
+            this.checkBox5.UseVisualStyleBackColor = false;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.checkBox6.Checked = true;
+            this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox6.Location = new System.Drawing.Point(0, 195);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(232, 40);
+            this.checkBox6.TabIndex = 11;
+            this.checkBox6.Text = "Pump Speed";
+            this.checkBox6.UseVisualStyleBackColor = false;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 1;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.label10, 0, 5);
-            this.tableLayoutPanel8.Controls.Add(this.label9, 0, 4);
-            this.tableLayoutPanel8.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel8.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel8.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Controls.Add(this.checkBox6, 0, 5);
+            this.tableLayoutPanel8.Controls.Add(this.checkBox5, 0, 4);
+            this.tableLayoutPanel8.Controls.Add(this.checkBox4, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.checkBox3, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.checkBox2, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.checkBox1, 0, 0);
+            this.tableLayoutPanel8.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 6;
@@ -408,84 +528,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(232, 235);
             this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 195);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(226, 40);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "Pumping Speed";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 156);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(226, 39);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "MFC";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 117);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(226, 39);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Watt";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(226, 39);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Current";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(226, 39);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "HVG";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 39);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "LVG";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // InstantChartPanel
             // 
@@ -536,14 +578,14 @@
         private System.Windows.Forms.TextBox txtY2Min;
         private System.Windows.Forms.TextBox txtY2Max;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
 
 
     }

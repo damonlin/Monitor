@@ -275,6 +275,19 @@ namespace HistoryChart
                 MessageBox.Show("½Ð¿é¤J 0 ~ 1200 ªº½d³ò");
                 txtMin.Text = m_iMinValue.ToString();
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            if (cb.Checked)
+            {
+                m_Chart.Series[cb.Text].Enabled = true;
+            }
+            else
+            {
+                m_Chart.Series[cb.Text].Enabled = false;
+            }
         }       
     }
 }

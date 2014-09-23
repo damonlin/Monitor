@@ -213,5 +213,18 @@ namespace InstantChart
 
             m_Chart.ChartAreas["Default"].Axes[1].ScaleView.Zoom(0, 1200 / m_iScale);
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+            if (cb.Checked)
+            {
+                m_Chart.Series[cb.Text].Enabled = true;                
+            }
+            else
+            {
+                m_Chart.Series[cb.Text].Enabled = false;
+            }            
+        }
     }
 }
