@@ -128,15 +128,27 @@
             this.m_Chart.Legends.Add(legend2);
             this.m_Chart.Location = new System.Drawing.Point(410, 3);
             this.m_Chart.Name = "m_Chart";
+<<<<<<< HEAD
+=======
+            series1.BorderWidth = 3;
+>>>>>>> 2014_09_08_Add_InstantChart
             series1.ChartArea = "Default";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "LVG";
+<<<<<<< HEAD
+=======
+            series2.BorderWidth = 3;
+>>>>>>> 2014_09_08_Add_InstantChart
             series2.ChartArea = "Default";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend2";
             series2.LegendText = "HVG";
             series2.Name = "HVG";
+<<<<<<< HEAD
+=======
+            series3.BorderWidth = 3;
+>>>>>>> 2014_09_08_Add_InstantChart
             series3.ChartArea = "Default";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";
@@ -222,8 +234,13 @@
             // 
             this.dateTimePickerEnd.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.dateTimePickerEnd.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dateTimePickerEnd.Location = new System.Drawing.Point(77, 38);
+=======
+            this.dateTimePickerEnd.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(77, 29);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(160, 30);
             this.dateTimePickerEnd.TabIndex = 9;
@@ -236,7 +253,11 @@
             this.label1.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(68, 35);
+=======
+            this.label1.Size = new System.Drawing.Size(68, 26);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.label1.TabIndex = 0;
             this.label1.Text = "Start";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -248,7 +269,11 @@
             this.label2.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label2.Location = new System.Drawing.Point(3, 35);
             this.label2.Name = "label2";
+<<<<<<< HEAD
             this.label2.Size = new System.Drawing.Size(68, 35);
+=======
+            this.label2.Size = new System.Drawing.Size(68, 26);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.label2.TabIndex = 1;
             this.label2.Text = "End";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -256,7 +281,10 @@
             // numberStartHour
             // 
             this.numberStartHour.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.numberStartHour.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+=======
+>>>>>>> 2014_09_08_Add_InstantChart
             this.numberStartHour.Location = new System.Drawing.Point(243, 3);
             this.numberStartHour.Maximum = new decimal(new int[] {
             24,
@@ -270,8 +298,12 @@
             // 
             // numberEndHour
             // 
+<<<<<<< HEAD
             this.numberEndHour.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.numberEndHour.Location = new System.Drawing.Point(243, 38);
+=======
+            this.numberEndHour.Location = new System.Drawing.Point(243, 29);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.numberEndHour.Maximum = new decimal(new int[] {
             23,
             0,
@@ -284,7 +316,10 @@
             // 
             // numberStartMin
             // 
+<<<<<<< HEAD
             this.numberStartMin.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+=======
+>>>>>>> 2014_09_08_Add_InstantChart
             this.numberStartMin.Location = new System.Drawing.Point(316, 3);
             this.numberStartMin.Maximum = new decimal(new int[] {
             59,
@@ -298,8 +333,12 @@
             // 
             // numberEndMin
             // 
+<<<<<<< HEAD
             this.numberEndMin.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.numberEndMin.Location = new System.Drawing.Point(316, 38);
+=======
+            this.numberEndMin.Location = new System.Drawing.Point(316, 29);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.numberEndMin.Maximum = new decimal(new int[] {
             59,
             0,
@@ -314,7 +353,11 @@
             // 
             this.dateTimePickerStart.CalendarFont = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerStart.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.dateTimePickerStart.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+=======
+            this.dateTimePickerStart.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+>>>>>>> 2014_09_08_Add_InstantChart
             this.dateTimePickerStart.Location = new System.Drawing.Point(77, 3);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
             this.dateTimePickerStart.Size = new System.Drawing.Size(160, 30);
@@ -497,10 +540,16 @@
             // btnScaleLarge
             // 
             this.btnScaleLarge.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.btnScaleLarge.Font = new System.Drawing.Font("PMingLiU", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnScaleLarge.Location = new System.Drawing.Point(3, 3);
             this.btnScaleLarge.Name = "btnScaleLarge";
             this.btnScaleLarge.Size = new System.Drawing.Size(89, 63);
+=======
+            this.btnScaleLarge.Location = new System.Drawing.Point(3, 3);
+            this.btnScaleLarge.Name = "btnScaleLarge";
+            this.btnScaleLarge.Size = new System.Drawing.Size(89, 32);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.btnScaleLarge.TabIndex = 9;
             this.btnScaleLarge.Text = "+";
             this.btnScaleLarge.UseVisualStyleBackColor = true;
@@ -584,9 +633,15 @@
             // 
             this.groupBox4.Controls.Add(this.flowLayoutPanel3);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.groupBox4.Location = new System.Drawing.Point(3, 529);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(389, 82);
+=======
+            this.groupBox4.Location = new System.Drawing.Point(3, 547);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(389, 72);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             // 
@@ -597,12 +652,19 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 33);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+<<<<<<< HEAD
             this.flowLayoutPanel3.Size = new System.Drawing.Size(383, 46);
+=======
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(383, 36);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // btnPaint
             // 
+<<<<<<< HEAD
             this.btnPaint.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+=======
+>>>>>>> 2014_09_08_Add_InstantChart
             this.btnPaint.Location = new System.Drawing.Point(3, 3);
             this.btnPaint.Name = "btnPaint";
             this.btnPaint.Size = new System.Drawing.Size(116, 47);
@@ -613,7 +675,10 @@
             // 
             // btnSave
             // 
+<<<<<<< HEAD
             this.btnSave.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+=======
+>>>>>>> 2014_09_08_Add_InstantChart
             this.btnSave.Location = new System.Drawing.Point(125, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(116, 47);
@@ -625,9 +690,15 @@
             // 
             this.groupBox5.Controls.Add(this.chkScientific);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.groupBox5.Location = new System.Drawing.Point(3, 79);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(389, 71);
+=======
+            this.groupBox5.Location = new System.Drawing.Point(3, 61);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(389, 52);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
@@ -637,10 +708,16 @@
             this.chkScientific.Checked = true;
             this.chkScientific.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkScientific.Dock = System.Windows.Forms.DockStyle.Fill;
+<<<<<<< HEAD
             this.chkScientific.Font = new System.Drawing.Font("PMingLiU", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.chkScientific.Location = new System.Drawing.Point(3, 33);
             this.chkScientific.Name = "chkScientific";
             this.chkScientific.Size = new System.Drawing.Size(383, 35);
+=======
+            this.chkScientific.Location = new System.Drawing.Point(3, 33);
+            this.chkScientific.Name = "chkScientific";
+            this.chkScientific.Size = new System.Drawing.Size(383, 16);
+>>>>>>> 2014_09_08_Add_InstantChart
             this.chkScientific.TabIndex = 3;
             this.chkScientific.Text = "Scientific Notation(科學符號)";
             this.chkScientific.UseVisualStyleBackColor = true;

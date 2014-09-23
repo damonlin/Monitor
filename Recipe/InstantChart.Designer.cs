@@ -348,15 +348,18 @@
             this.m_Chart.Legends.Add(legend2);
             this.m_Chart.Location = new System.Drawing.Point(259, 3);
             this.m_Chart.Name = "m_Chart";
+            series1.BorderWidth = 3;
             series1.ChartArea = "Default";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
             series1.Name = "LVG";
+            series2.BorderWidth = 3;
             series2.ChartArea = "Default";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series2.Legend = "Legend2";
             series2.LegendText = "HVG";
             series2.Name = "HVG";
+            series3.BorderWidth = 3;
             series3.ChartArea = "Default";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series3.Legend = "Legend1";

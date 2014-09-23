@@ -130,11 +130,11 @@ namespace AutoMode
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
 
-            string fileName = DateTime.Now.ToString("yyyy_MM_dd") + ".txt";
+            string fileName = DateTime.Now.ToString("yyyy_MM_dd") + ".csv";
          
             FileStream myFile = File.Open(path + fileName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
             StreamWriter myWriter = new StreamWriter(myFile);
-            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + newY.ToString() + " " + txtID.Text);
+            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss,") + newY.ToString() + "," + txtID.Text);
             //myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + value + " " + txtID.Text);
             myWriter.Dispose();
             myFile.Dispose();
@@ -174,7 +174,7 @@ namespace AutoMode
         private string ConvertToTorr(string value)
         {            
             double voltage = Convert.ToInt32(value,16) * 0.005;
-            return Math.Round(Math.Pow(10, voltage - 5.625), 3).ToString("E2");
+            return Math.Round(Math.Pow(10, voltage - 5.625), 4).ToString("E2");
         }
       
         private void btnRVSwitch_Click(object sender, EventArgs e)

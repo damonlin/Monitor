@@ -42,13 +42,13 @@ namespace HistoryChart
         {
             string filename = dateTimePickerStart.Value.Year.ToString() + "_" +
                               dateTimePickerStart.Value.Month.ToString("D2") + "_" +
-                              dateTimePickerStart.Value.Day.ToString("D2") + ".txt";
+                              dateTimePickerStart.Value.Day.ToString("D2") + ".csv";
 
             string LVGpath = System.Environment.CurrentDirectory + "\\History\\LVG\\";
 
             foreach (string line in File.ReadLines(LVGpath + filename))
             {
-                string[] arr = line.Split(null);
+                string[] arr = line.Split(',');
 
                 DateTime dt = Convert.ToDateTime(arr[0]);
                 DateTime startTime = Convert.ToDateTime(numberStartHour.Value.ToString() + ":" + numberStartMin.Value.ToString());
@@ -65,13 +65,13 @@ namespace HistoryChart
         {
             string filename = dateTimePickerStart.Value.Year.ToString() + "_" +
                               dateTimePickerStart.Value.Month.ToString("D2") + "_" +
-                              dateTimePickerStart.Value.Day.ToString("D2") + ".txt";
+                              dateTimePickerStart.Value.Day.ToString("D2") + ".csv";
 
             string LVGpath = System.Environment.CurrentDirectory + "\\History\\HVG\\";
 
             foreach (string line in File.ReadLines(LVGpath + filename))
             {
-                string[] arr = line.Split(null);
+                string[] arr = line.Split(',');
 
                 DateTime dt = Convert.ToDateTime(arr[0]);
                 DateTime startTime = Convert.ToDateTime(numberStartHour.Value.ToString() + ":" + numberStartMin.Value.ToString());
@@ -125,7 +125,7 @@ namespace HistoryChart
                 if (iIdx >= m_LVGData.Count)
                     continue;
 
-                string[] arr = m_LVGData[iIdx].Split(null);
+                string[] arr = m_LVGData[iIdx].Split(',');
                 m_Chart.Series[0].Points.AddXY(arr[0], arr[1]);
             }
 
@@ -134,7 +134,7 @@ namespace HistoryChart
                 if (iIdx >= m_HVGData.Count)
                     continue;
 
-                string[] arr = m_HVGData[iIdx].Split(null);
+                string[] arr = m_HVGData[iIdx].Split(',');
                 m_Chart.Series[1].Points.AddXY(arr[0], arr[1]);
             }
          

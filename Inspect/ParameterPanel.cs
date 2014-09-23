@@ -21,6 +21,7 @@ namespace Parameter
         public ParameterPanel()
         {
             InitializeComponent();
+            MakeTablelayoutSmooth();
             LoadIniFile();
         }
 
@@ -33,6 +34,12 @@ namespace Parameter
             return singleton;
         }
 
+        private void MakeTablelayoutSmooth()
+        {
+            tableLayoutPanel1.GetType()
+                        .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                        .SetValue(tableLayoutPanel1, true, null);
+        }
         private void LoadIniFile()
         {
             IniFile iniFile = new IniFile(strINIPath);
@@ -119,6 +126,6 @@ namespace Parameter
 #endif
             SaveIniFile();
 
-        }     
+        }
     }
 }
