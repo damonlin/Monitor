@@ -54,8 +54,8 @@ namespace InstantChart
            
             DateTime now = DateTime.Now;
 
-            //chart.Series[iSeriesIdx].Points.AddXY(now.ToString("HH:mm:ss"), value);      
-            m_Chart.Series[iSeriesIdx].Points.AddXY(now.ToString("HH:mm:ss"), newY.ToString());
+            m_Chart.Series[iSeriesIdx].Points.AddXY(now.ToString("HH:mm:ss"), value);      
+            //m_Chart.Series[iSeriesIdx].Points.AddXY(now.ToString("HH:mm:ss"), newY.ToString());
        
             ++pointIndex;
 

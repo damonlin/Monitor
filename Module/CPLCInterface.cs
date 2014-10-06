@@ -280,8 +280,8 @@ namespace ContrelModule
            cmd.Append(PC_NUMBER);
            cmd.Append("WR");
            cmd.Append("A");
-           cmd.Append("D1616"); // Read From D1616 ~ D1619
-           cmd.Append("04");
+           cmd.Append("D1616"); // Read From D1616 ~ D1621
+           cmd.Append("06");
 
            string checksum = CheckSum(cmd);
            cmd.Append(checksum);           
@@ -368,9 +368,11 @@ namespace ContrelModule
                    break;
 
            int dataLength = iIdx - iOffset + 1;
+           //MessageBox.Show(dataLength.ToString());
            switch(dataLength)
            {
-               case 17:     // This is Read D type from PLC : D1616 ~ D1619(一共 4*4 = 16 byte)
+               case 25:     // This is Read D type from PLC : D1616 ~ D1621(一共 4*6 = 24 byte)
+               case 24:
                    data.m_DataType = DATA_TYPE.D_Type;
                    break;
 

@@ -24,7 +24,9 @@ namespace AutoMode
 
         private bool bRVON = false;
         private bool bVVON = false;
+        private bool bMFCON = false;
         private bool bAuto = false;
+
 
         //private FileStream m_HVGFile = null;
         //private StreamWriter m_HVGWriter = null;
@@ -108,10 +110,18 @@ namespace AutoMode
                         btnManual.BackColor = Color.Green;
                         btnManual.Enabled = false;
                     }
+
+                    if (bMFCON)
+                        btnMFCSwitch.BackColor = Color.Green;
+                    else
+                        btnMFCSwitch.BackColor = Color.Red;
+
                 }         
             }
             ProcessChart(m_LVGChart, labelLVG.Text);
             ProcessChart(m_HVGChart, labelHVG.Text);
+            ProcessChart(m_CurrentChart, labelCurrent.Text);
+            ProcessChart(m_WattChart, labelWatt.Text);
         }
 
         private void ProcessChart(System.Windows.Forms.DataVisualization.Charting.Chart chart, string value )
@@ -120,11 +130,11 @@ namespace AutoMode
             int numberOfPointsAfterRemoval = 7;
 
             //int newX = pointIndex + 1;
-            int newY = random.Next(100, 1000);
+            //int newY = random.Next(100, 1000);
             
             DateTime now = DateTime.Now;
-            //chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
-            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), newY.ToString());
+            chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), value);      
+            //chart.Series[0].Points.AddXY(now.ToString("HH:mm:ss"), newY.ToString());
 
             string path = System.Environment.CurrentDirectory + "\\History\\" + chart.Text + "\\";
             if (!Directory.Exists(path))
@@ -134,8 +144,8 @@ namespace AutoMode
          
             FileStream myFile = File.Open(path + fileName, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
             StreamWriter myWriter = new StreamWriter(myFile);
-            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss,") + newY.ToString() + "," + txtID.Text);
-            //myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + value + " " + txtID.Text);
+            //myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss,") + newY.ToString() + "," + txtID.Text);
+            myWriter.WriteLine(DateTime.Now.ToString("HH:mm:ss ") + "," + value + "," + txtID.Text);
             myWriter.Dispose();
             myFile.Dispose();
 
@@ -205,6 +215,20 @@ namespace AutoMode
             m_PLCInterface.PLCWriteBit_M("M2022", 2, bVVON);
         }
 
+        private void btnMFCSwitch_Click(object sender, EventArgs e)
+        {
+            if (bAuto)
+            {
+                MessageBox.Show("½Ð¤Á´«¨ì Manual ¼Ò¦¡");
+                return;
+            }
+
+            ConfirmDialog dlg = new ConfirmDialog(bMFCON);
+            DialogResult retval = dlg.ShowDialog();
+            bMFCON = dlg.ON;
+            m_PLCInterface.PLCWriteBit_M("M2024", 2, bMFCON);
+        }
+
         private void btnAuto_Click(object sender, EventArgs e)
         {            
             bAuto = !bAuto;
@@ -247,8 +271,17 @@ namespace AutoMode
                     labelCycle.Text = Convert.ToInt32(data.m_RcvData.Substring(4, 4), 16).ToString(); // D1617
 
                     labelLVG.Text = ConvertToTorr(data.m_RcvData.Substring(8, 4));  // D1618
-                    labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619             
+                    labelHVG.Text = ConvertToTorr(data.m_RcvData.Substring(12, 4)); // D1619                                 
+
+                    int tmpCurrent = Convert.ToInt32(data.m_RcvData.Substring(16, 4),16);// D1620
+                    double doubleCurnet = tmpCurrent / 1000.0;
+                    labelCurrent.Text = doubleCurnet.ToString();
+
+                    //int tmpWatt = Convert.ToInt32(data.m_RcvData.Substring(20, 4), 16);// D1621
+                    //labelWatt.Text = tmpWatt.ToString(); // D1621
                 }
         }
+
+        
     }
 }
